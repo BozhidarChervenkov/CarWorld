@@ -1,0 +1,50 @@
+﻿@model CarWorld.ViewModels.CarViewModels.AddCarInputModel
+
+@{
+    this.ViewData["Title"] = "Add new car";
+}
+<div class="container">
+    <h3 class="display-4 text-center">Add new car:</h3>
+
+    <form asp-controller="CarsController" asp-action="Add" method="post" class="col-md-8 offset-2">
+        <div class="form-group">
+            <label asp-for="Make" class="control-label"></label>
+            <input type="text" asp-for="Make" class="form-control" placeholder="Make" />
+            <span asp-validation-for="Make" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Model" class="control-label"></label>
+            <input type="text" asp-for="Model" class="form-control" placeholder="Model" />
+            <span asp-validation-for="Model" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BodyType" class="control-label"></label>
+            <select asp-for="BodyType" class="form-control" asp-items="@(new SelectList(@ViewBag.BodyTypesList, "Id", "Name"))"></select>
+            <span asp-validation-for="BodyType" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Year"></label>
+            <input type="number" asp-for="Year" class="form-control" placeholder="Year" />
+            <span asp-validation-for="Year" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input type="text" asp-for="Price" class="form-control" placeholder="Price" />
+            <span asp-validation-for="Price" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger" />
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Add" class="btn-success btn-lg" />
+        </div>
+    </form>
+</div>

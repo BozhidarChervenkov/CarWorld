@@ -2,6 +2,8 @@
 {
     public static class GlobalConstants
     {
+        public const string CarPriceFormat = "decimal(18,2)";
+
         public const int CarDescriptionMinLength = 150;
         public const int CarDescriptionMaxLength = 1500;
 

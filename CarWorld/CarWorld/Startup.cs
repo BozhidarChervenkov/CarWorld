@@ -9,6 +9,7 @@ namespace CarWorld
 
     using CarWorld.Data;
     using CarWorld.Models;
+    using CarWorld.Services.Car;
 
     public class Startup
     {
@@ -30,6 +31,8 @@ namespace CarWorld
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddTransient<ICarService, CarsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
