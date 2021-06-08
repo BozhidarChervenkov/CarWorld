@@ -1,11 +1,12 @@
 ﻿namespace CarWorld.Services.Car
 {
+    using System;
+    using System.Linq;    
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     using CarWorld.Data;
     using CarWorld.Models;
     using CarWorld.ViewModels.CarViewModels;
-    using Microsoft.AspNetCore.Mvc.Rendering;
-    using System;
-    using System.Linq;
 
     public class CarsService : ICarService
     {
@@ -28,11 +29,12 @@
                 Description = inputModel.Description,
                 CreatedOn = DateTime.Now,
                 AddedByUserId = userId,
+                Pictures=inputModel.Pictures,
             };
 
-            //this.context.Cars.Add(car);
+            this.context.Cars.Add(car);
 
-            //await this.context.SaveChangesAsync();
+            await this.context.SaveChangesAsync();
         }
 
         public SelectList BodyTypesSelectList()
@@ -42,8 +44,6 @@
             var selectList = new SelectList(bodyTypes, "Id", "Name");
 
             return selectList;
-        }
-
-        
+        }   
     }
 }

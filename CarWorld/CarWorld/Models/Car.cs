@@ -4,13 +4,14 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     using CarWorld.GlobalConstants;
 
     public class Car
     {
         public Car()
         {
-            this.CarPictures = new HashSet<CarPicture>();
+            this.Pictures = new HashSet<Picture>();
         }
 
         [Key]
@@ -49,7 +50,7 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public ICollection<CarPicture> CarPictures { get; set; }
+        public ICollection<Picture> Pictures { get; set; }
         
     }
 }

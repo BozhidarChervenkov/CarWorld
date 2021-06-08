@@ -1,11 +1,12 @@
 ﻿namespace CarWorld.Controllers
 {
-    using CarWorld.Models;
-    using CarWorld.Services.Car;
-    using CarWorld.ViewModels.CarViewModels;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+
+    using CarWorld.Models;
+    using CarWorld.Services.Car;
+    using CarWorld.ViewModels.CarViewModels;
 
     public class CarsController : Controller
     {
@@ -39,7 +40,7 @@
 
             this.carsService.CreateCarAndAddToDb(inputModel, userId);
 
-            return View("/");
+            return View("/"); 
         }
     }
 }

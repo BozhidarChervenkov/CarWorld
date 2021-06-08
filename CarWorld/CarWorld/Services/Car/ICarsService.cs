@@ -1,8 +1,8 @@
 ﻿namespace CarWorld.Services.Car
 {
-    using CarWorld.Models;
-    using CarWorld.ViewModels.CarViewModels;
     using Microsoft.AspNetCore.Mvc.Rendering;
+
+    using CarWorld.ViewModels.CarViewModels;
 
     public interface ICarService
     {

@@ -7,6 +7,9 @@
         public const int CarDescriptionMinLength = 10;
         public const int CarDescriptionMaxLength = 1500;
 
+        public const int CarYearMin = 1500;
+        public const int CarYearMax = 2500;
+
         public const int MakeNameMinLenght = 2;
         public const int MakeNameMaxLenght = 20;
 

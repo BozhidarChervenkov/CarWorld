@@ -1,9 +1,9 @@
 ﻿namespace CarWorld.Data
-{
-    using CarWorld.Models;
-
+{   
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+
+    using CarWorld.Models;
 
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -24,24 +24,9 @@
 
         public DbSet<Picture> Pictures { get; set; }
 
-        public DbSet<CarPicture> CarPictures { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
-            builder.Entity<CarPicture>()
-                .HasKey(cp => new
-                {
-                    cp.CarId,
-                    cp.PictureId
-                });
+            base.OnModelCreating(builder);     
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
-
-        
     }
 }

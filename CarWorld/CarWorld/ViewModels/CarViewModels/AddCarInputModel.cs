@@ -1,10 +1,11 @@
 ﻿namespace CarWorld.ViewModels.CarViewModels
-{
-    using CarWorld.Models;
-    using GlobalConstants;
+{    
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using CarWorld.Models;
+    using GlobalConstants;
 
     public class AddCarInputModel
     {
@@ -22,9 +23,11 @@
         [Required]
         public int BodyTypeId { get; set; }
 
+        [Display(Name ="Body Type")]
         public BodyType BodyType { get; set; }
 
         [Required]
+        [Range(GlobalConstants.CarYearMin, GlobalConstants.CarYearMax)]
         public int Year { get; set; }
 
         [Required]
