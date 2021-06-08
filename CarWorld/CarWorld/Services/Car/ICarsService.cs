@@ -1,14 +1,13 @@
 ﻿namespace CarWorld.Services.Car
 {
-    using System.Collections.Generic;
-
     using CarWorld.Models;
     using CarWorld.ViewModels.CarViewModels;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public interface ICarService
     {
-        void CreateCarAndAddToDb(AddCarInputModel inputModel);
+        void CreateCarAndAddToDb(AddCarInputModel inputModel, string userId);
 
-        ICollection<BodyType> BodyTypesList();
+        SelectList BodyTypesSelectList();
     } 
 }

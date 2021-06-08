@@ -6,23 +6,28 @@
 <div class="container">
     <h3 class="display-4 text-center">Add new car:</h3>
 
-    <form asp-controller="CarsController" asp-action="Add" method="post" class="col-md-8 offset-2">
+    <form asp-controller="Cars" asp-action="Add" method="post" class="col-md-8 offset-2">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
         <div class="form-group">
             <label asp-for="Make" class="control-label"></label>
-            <input type="text" asp-for="Make" class="form-control" placeholder="Make" />
-            <span asp-validation-for="Make" class="text-danger" />
+            <input type="text" asp-for="Make.Name" class="form-control" placeholder="Make" />
+            <span asp-validation-for="Make.Name" class="text-danger" />
         </div>
 
         <div class="form-group">
             <label asp-for="Model" class="control-label"></label>
-            <input type="text" asp-for="Model" class="form-control" placeholder="Model" />
-            <span asp-validation-for="Model" class="text-danger" />
+            <input type="text" asp-for="Model.Name" class="form-control" placeholder="Model" />
+            <span asp-validation-for="Model.Name" class="text-danger" />
         </div>
 
         <div class="form-group">
             <label asp-for="BodyType" class="control-label"></label>
-            <select asp-for="BodyType" class="form-control" asp-items="@(new SelectList(@ViewBag.BodyTypesList, "Id", "Name"))"></select>
-            <span asp-validation-for="BodyType" class="text-danger" />
+            <select asp-for="BodyTypeId" class="form-control" asp-items="@ViewBag.BodyTypesSelectList">
+                <option value=" " selected disabled>--Select--</option>
+            </select>
+            <span asp-validation-for="BodyType.Name" class="text-danger" />
         </div>
 
         <div class="form-group">
@@ -43,8 +48,26 @@
             <span asp-validation-for="Description" class="text-danger" />
         </div>
 
+        <div id="CarPicturesContainer">
+            <label asp-for="Pictures"></label>
+            <a class="btn btn-success" onclick="AddMoreUrls()">+</a>
+        </div>
+
         <div class="text-center">
-            <input type="submit" value="Add" class="btn-success btn-lg" />
+            <button type="submit" formmethod="post" class="btn-success btn-lg">Add</button>
         </div>
     </form>
 </div>
+
+@section Scripts
+{ 
+    <script>
+        var urlIndex = 0;
+
+        function AddMoreUrls()
+        {
+            $("#CarPicturesContainer").append("<div class='form-control'>Url:<input type='text' name='Pictures[0].Url' id='' /></div>");
+            urlIndex++;
+        }
+    </script>
+}

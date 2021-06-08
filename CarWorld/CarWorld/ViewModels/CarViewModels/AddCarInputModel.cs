@@ -10,22 +10,18 @@
     {
         public AddCarInputModel()
         {
-            this.CarPictures = new HashSet<CarPicture>();
+            this.Pictures = new HashSet<Picture>();
         }
 
         [Required]
-        public int MakeId { get; set; }
-
         public Make Make { get; set; }
 
         [Required]
-        public int ModelId { get; set; }
-
         public Model Model { get; set; }
 
+        [Required]
         public int BodyTypeId { get; set; }
 
-        [Required]
         public BodyType BodyType { get; set; }
 
         [Required]
@@ -40,6 +36,6 @@
         [MaxLength(GlobalConstants.CarDescriptionMaxLength)]
         public string Description { get; set; }
 
-        public ICollection<CarPicture> CarPictures { get; set; }
+        public ICollection<Picture> Pictures { get; set; }
     }
 }
