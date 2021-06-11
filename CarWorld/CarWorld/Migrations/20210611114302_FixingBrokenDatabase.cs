@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CarWorld.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class FixingBrokenDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,7 +26,6 @@ namespace CarWorld.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -68,7 +67,7 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,24 +80,11 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Models", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Pictures",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pictures", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -218,7 +204,9 @@ namespace CarWorld.Migrations
                     ModelId = table.Column<int>(type: "int", nullable: false),
                     BodyTypeId = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -250,27 +238,23 @@ namespace CarWorld.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarPictures",
+                name: "Pictures",
                 columns: table => new
                 {
-                    CarId = table.Column<int>(type: "int", nullable: false),
-                    PictureId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CarPictures", x => new { x.CarId, x.PictureId });
+                    table.PrimaryKey("PK_Pictures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CarPictures_Cars_CarId",
+                        name: "FK_Pictures_Cars_CarId",
                         column: x => x.CarId,
                         principalTable: "Cars",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CarPictures_Pictures_PictureId",
-                        column: x => x.PictureId,
-                        principalTable: "Pictures",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -313,11 +297,6 @@ namespace CarWorld.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarPictures_PictureId",
-                table: "CarPictures",
-                column: "PictureId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Cars_AddedByUserId",
                 table: "Cars",
                 column: "AddedByUserId");
@@ -336,6 +315,11 @@ namespace CarWorld.Migrations
                 name: "IX_Cars_ModelId",
                 table: "Cars",
                 column: "ModelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pictures_CarId",
+                table: "Pictures",
+                column: "CarId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -356,16 +340,13 @@ namespace CarWorld.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CarPictures");
+                name: "Pictures");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "Cars");
-
-            migrationBuilder.DropTable(
-                name: "Pictures");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

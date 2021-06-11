@@ -194,7 +194,7 @@ namespace CarWorld.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CarId")
+                    b.Property<int?>("CarId")
                         .HasColumnType("int");
 
                     b.Property<string>("Url")
@@ -381,9 +381,7 @@ namespace CarWorld.Migrations
                 {
                     b.HasOne("CarWorld.Models.Car", "Car")
                         .WithMany("Pictures")
-                        .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarId");
 
                     b.Navigation("Car");
                 });

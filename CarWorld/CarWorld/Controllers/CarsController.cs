@@ -40,7 +40,7 @@
 
             this.carsService.CreateCarAndAddToDb(inputModel, userId);
 
-            return View("/"); 
+            return Redirect("~/Home/Index");
         }
     }
 }

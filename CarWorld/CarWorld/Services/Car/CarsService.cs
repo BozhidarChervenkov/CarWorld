@@ -17,7 +17,7 @@
             this.context = context;
         }
 
-        public async void CreateCarAndAddToDb(AddCarInputModel inputModel, string userId)
+        public void CreateCarAndAddToDb(AddCarInputModel inputModel, string userId)
         {
             Car car = new()
             {
@@ -34,7 +34,7 @@
 
             this.context.Cars.Add(car);
 
-            await this.context.SaveChangesAsync();
+            this.context.SaveChanges();
         }
 
         public SelectList BodyTypesSelectList()
