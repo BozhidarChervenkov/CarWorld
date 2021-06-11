@@ -10,7 +10,7 @@ namespace CarWorld
     using CarWorld.Data;
     using CarWorld.Models;
     using CarWorld.Services.Car;
-    using Microsoft.AspNetCore.Identity;
+    using CarWorld.Services.Home;
 
     public class Startup
     {
@@ -44,6 +44,8 @@ namespace CarWorld
             services.AddControllersWithViews();
 
             services.AddTransient<ICarService, CarsService>();
+            services.AddTransient<ILatestCarsService, LatestCarsService>();
+            services.AddTransient<ICountsService, CountsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

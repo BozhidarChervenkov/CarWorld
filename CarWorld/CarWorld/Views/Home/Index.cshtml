@@ -1,8 +1,63 @@
-﻿@{
+﻿@model CarWorld.ViewModels.HomePageViewModels.LatestCars
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center p-2">
+    <div class="">
+        <h1 id="lblGreetings"></h1>
+    </div>
 </div>
+
+<div class="col-md-4 offset-md-4 p-2 text-center">
+    <h2 class="text-center">We have:</h2>
+    <ul class="list-group table-striped">
+        <li class="list-group-item list-group-item-dark">Cars: @ViewBag.CountsViewModel.CarsCountInDb </li>
+        <li class="list-group-item list-group-item-secondary">Makes: @ViewBag.CountsViewModel.MakesCountInDb </li>
+        <li class="list-group-item list-group-item-dark">Models: @ViewBag.CountsViewModel.ModelsCountInDb </li>
+        <li class="list-group-item list-group-item-secondary">Pictures: @ViewBag.CountsViewModel.PicturesCountInDb </li>
+    </ul>
+</div>
+
+<div class="form-group">
+
+    <div class="text-start p-2">
+        <h3>Here are some of our latest assets:</h3>
+    </div>
+
+    <div class="row p-4">
+        @foreach (var car in Model.Cars)
+        {
+
+            <div class="card m-2" style="width: 16rem;">
+                <img src="@car.PictureUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@car.MakeName @car.ModelName</h5>
+                    <p class="card-text">@car.Description</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        var myDate = new Date();
+        var hrs = myDate.getHours();
+
+        var greet;
+
+        if (hrs < 12)
+            greet = 'Good Morning';
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon';
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening';
+
+        document.getElementById('lblGreetings').innerHTML =
+            '<b>' + greet + '</b> and welcome to CarWorld!';
+    </script>
+} 

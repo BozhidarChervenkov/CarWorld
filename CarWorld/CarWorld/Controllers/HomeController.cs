@@ -1,26 +1,31 @@
-﻿using CarWorld.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿namespace CarWorld.Controllers
+{    
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using System.Diagnostics;
 
-namespace CarWorld.Controllers
-{
+    using CarWorld.Models;
+    using CarWorld.Services.Home;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ILatestCarsService homeService;
+        private readonly ICountsService countsService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ILatestCarsService homeService, ICountsService countsService)
         {
-            _logger = logger;
+            this._logger = logger;
+            this.homeService = homeService;
+            this.countsService = countsService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var viewModel = homeService.CollectData();
+            ViewBag.CountsViewModel = countsService.ReturnCounts();
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
