@@ -43,7 +43,7 @@ namespace CarWorld
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
-            services.AddTransient<ICarService, CarsService>();
+            services.AddTransient<ICreateCarService, CreateCarService>();
             services.AddTransient<ILatestCarsService, LatestCarsService>();
             services.AddTransient<ICountsService, CountsService>();
         }

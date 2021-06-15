@@ -1,4 +1,4 @@
-﻿namespace CarWorld.ViewModels.CarViewModels
+﻿namespace CarWorld.ViewModels.CreateCarViewModels
 {    
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,9 +7,9 @@
     using CarWorld.Models;
     using GlobalConstants;
 
-    public class AddCarInputModel
+    public class CreateCarInputModel
     {
-        public AddCarInputModel()
+        public CreateCarInputModel()
         {
             this.Pictures = new HashSet<Picture>();
         }

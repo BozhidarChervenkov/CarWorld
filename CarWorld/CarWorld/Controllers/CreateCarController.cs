@@ -6,14 +6,14 @@
 
     using CarWorld.Models;
     using CarWorld.Services.Car;
-    using CarWorld.ViewModels.CarViewModels;
+    using CarWorld.ViewModels.CreateCarViewModels;
 
-    public class CarsController : Controller
+    public class CreateCarController : Controller
     {
-        private readonly ICarService carsService;
+        private readonly ICreateCarService carsService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public CarsController(ICarService service, UserManager<ApplicationUser> userManager)
+        public CreateCarController(ICreateCarService service, UserManager<ApplicationUser> userManager)
         {
             this.carsService = service;
             this.userManager = userManager;
@@ -29,7 +29,7 @@
 
         [HttpPost]
         [Authorize]
-        public IActionResult Add(AddCarInputModel inputModel)
+        public IActionResult Add(CreateCarInputModel inputModel)
         {
             if (!ModelState.IsValid)
             {

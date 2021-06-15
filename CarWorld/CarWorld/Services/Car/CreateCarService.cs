@@ -6,18 +6,18 @@
 
     using CarWorld.Data;
     using CarWorld.Models;
-    using CarWorld.ViewModels.CarViewModels;
+    using CarWorld.ViewModels.CreateCarViewModels;
 
-    public class CarsService : ICarService
+    public class CreateCarService : ICreateCarService
     {
         private readonly ApplicationDbContext context;
         
-        public CarsService(ApplicationDbContext context)
+        public CreateCarService(ApplicationDbContext context)
         {
             this.context = context;
         }
 
-        public void CreateCarAndAddToDb(AddCarInputModel inputModel, string userId)
+        public void CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId)
         {
             Car car = new()
             {

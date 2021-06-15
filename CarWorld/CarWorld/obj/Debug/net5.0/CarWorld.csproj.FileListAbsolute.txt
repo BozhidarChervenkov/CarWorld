@@ -785,7 +785,6 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.dll
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\ref\CarWorld.dll
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.pdb
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.genruntimeconfig.cache
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Cars\Add.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.csprojAssemblyReference.cache
 D:\Web Projects\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Web Projects\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -836,3 +835,4 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\CreateCar\Add.cshtml.g.cs
