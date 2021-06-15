@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.journal.min.css" rel="stylesheet" />
-
 </head>
 <body>
     <header>
@@ -29,7 +28,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="CreateCar" asp-action="Add">Add Car</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="CreateCars" asp-action="Add">Add Car</a>
                             </li>
                         }
                     </ul>

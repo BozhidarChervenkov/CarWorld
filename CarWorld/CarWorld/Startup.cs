@@ -44,6 +44,7 @@ namespace CarWorld
             services.AddControllersWithViews();
 
             services.AddTransient<ICreateCarService, CreateCarService>();
+            services.AddTransient<ICarService, CarService>();
             services.AddTransient<ILatestCarsService, LatestCarsService>();
             services.AddTransient<ICountsService, CountsService>();
         }

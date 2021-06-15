@@ -17,11 +17,12 @@
 
         public LatestCars CollectData()
         {
-            // Gather only the needed information for the cars, turning them into CarViewModel
+            // Selection of a list of entities with specific columns from database
             ICollection<CarViewModel> cars = this.context.Cars
                                       .OrderByDescending(c => c.CreatedOn)
                                       .Select(c => new CarViewModel()
                                       {
+                                          CarId = c.Id,
                                           MakeName = c.Make.Name,
                                           ModelName= c.Model.Name,
                                           Description = c.Description,

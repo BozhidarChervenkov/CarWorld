@@ -2,6 +2,8 @@
 {
     public class CarViewModel
     {
+        public int CarId { get; set; }
+
         public string MakeName { get; set; }
 
         public string ModelName { get; set; }

@@ -835,4 +835,6 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\CreateCar\Add.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\CreateCars\Add.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Cars\CarById.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\libman.json

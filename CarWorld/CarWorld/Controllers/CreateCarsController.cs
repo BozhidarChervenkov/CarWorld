@@ -8,12 +8,12 @@
     using CarWorld.Services.Car;
     using CarWorld.ViewModels.CreateCarViewModels;
 
-    public class CreateCarController : Controller
+    public class CreateCarsController : Controller
     {
         private readonly ICreateCarService carsService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public CreateCarController(ICreateCarService service, UserManager<ApplicationUser> userManager)
+        public CreateCarsController(ICreateCarService service, UserManager<ApplicationUser> userManager)
         {
             this.carsService = service;
             this.userManager = userManager;
@@ -24,6 +24,7 @@
         public IActionResult Add()
         {
             ViewBag.BodyTypesSelectList = carsService.BodyTypesSelectList();
+
             return View();
         }
 

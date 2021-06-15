@@ -50,7 +50,6 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public ICollection<Picture> Pictures { get; set; }
-        
+        public ICollection<Picture> Pictures { get; set; }        
     }
 }
