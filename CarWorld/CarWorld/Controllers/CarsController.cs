@@ -2,14 +2,15 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
+    using CarWorld.GlobalConstants;
     using CarWorld.Services.Car;
     using CarWorld.ViewModels.CarViewModels;
 
     public class CarsController : Controller
     {
-        private readonly ICarService carService;
+        private readonly ICarsService carService;
 
-        public CarsController(ICarService carService)
+        public CarsController(ICarsService carService)
         {
             this.carService = carService;
         }
@@ -19,7 +20,22 @@
         {
             CarViewModel viewModel = carService.Car(id);
 
-            return View(viewModel);
+            return this.View(viewModel);
+        }
+
+        // Example: Cars/All/{pageNumber}
+        [HttpGet]
+        public IActionResult All(int id = GlobalConstants.MinStartingPageNumber)
+        {
+            var viewModel = new CarsListViewModel
+            {
+                Cars = this.carService.GetAll(id, GlobalConstants.MaxCarsPerPageCount),
+                PageNumber = id,
+                ItemsPerPage = GlobalConstants.MaxCarsPerPageCount,
+                DbCarsCount = this.carService.DbCarsCount()
+            };
+
+            return this.View(viewModel);
         }
     }
 }

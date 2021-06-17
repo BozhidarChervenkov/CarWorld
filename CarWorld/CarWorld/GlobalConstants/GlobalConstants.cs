@@ -2,6 +2,17 @@
 {
     public static class GlobalConstants
     {
+        // Home page constants:
+
+        public const int HomeCarsPerPage = 8;
+
+        // Cars/All page constants:
+
+        public const int MinStartingPageNumber = 1;
+        public const int MaxCarsPerPageCount = 12;
+
+        // Model validation constants:
+
         public const string CarPriceFormat = "decimal(18,2)";
 
         public const int CarDescriptionMinLength = 10;

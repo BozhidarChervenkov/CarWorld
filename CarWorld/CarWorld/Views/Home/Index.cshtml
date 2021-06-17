@@ -31,11 +31,13 @@
         {
 
             <div class="card m-2" style="width: 16rem;">
-                <img src="@car.PictureUrl" class="card-img-top" alt="...">
+                <img src="@car.PictureUrl" class="card-img-top" width="260" height="150" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">@car.MakeName @car.ModelName</h5>
                     <p class="card-text">@car.Description</p>
-                    <a asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId" class="btn btn-primary">Go somewhere</a>
+                    <div class="text-center">
+                        <a asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId" class="btn btn-primary">Check it out!</a>
+                    </div>
                 </div>
             </div>
         }

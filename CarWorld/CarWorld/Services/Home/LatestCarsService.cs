@@ -4,6 +4,7 @@
     using System.Collections.Generic;
 
     using CarWorld.Data;
+    using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.HomePageViewModels;
     
     public class LatestCarsService : ILatestCarsService
@@ -28,7 +29,7 @@
                                           Description = c.Description,
                                           PictureUrl = c.Pictures.FirstOrDefault().Url
                                       })
-                                      .Take(8)
+                                      .Take(GlobalConstants.HomeCarsPerPage)
                                       .ToList();
 
             // Giving the collection of CarViewModel to main view model for Home page
