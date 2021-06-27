@@ -11,6 +11,7 @@ namespace CarWorld
     using CarWorld.Models;
     using CarWorld.Services.Car;
     using CarWorld.Services.Home;
+    using CarWorld.Services.Categories;
 
     public class Startup
     {
@@ -47,6 +48,7 @@ namespace CarWorld
             services.AddTransient<ICarsService, CarsService>();
             services.AddTransient<ILatestCarsService, LatestCarsService>();
             services.AddTransient<ICountsService, CountsService>();
+            services.AddTransient<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +78,9 @@ namespace CarWorld
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Categories}/{action=CarsByCategory}/{bodyTypeId?}/{pageId?}");
                 endpoints.MapRazorPages();
             });
         }

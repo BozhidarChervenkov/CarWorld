@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using CarWorld.GlobalConstants;
+    using static GlobalConstants.GlobalConstants;
 
     public class Car
     {
@@ -40,12 +40,12 @@
         public int Year { get; set; }
 
         [Required]
-        [Column(TypeName = GlobalConstants.CarPriceFormat)]
+        [Column(TypeName = CarPriceFormat)]
         public decimal Price { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.CarDescriptionMinLength)]
-        [MaxLength(GlobalConstants.CarDescriptionMaxLength)]
+        [MinLength(CarDescriptionMinLength)]
+        [MaxLength(CarDescriptionMaxLength)]
         public string Description { get; set; }
 
         public DateTime CreatedOn { get; set; }

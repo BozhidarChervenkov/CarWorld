@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using GlobalConstants;
+    using static GlobalConstants.GlobalConstants;
 
     public class Model
     {
@@ -10,8 +10,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.ModelNameMinLenght)]
-        [MaxLength(GlobalConstants.ModelNameMaxLenght)]
+        [MinLength(ModelNameMinLenght)]
+        [MaxLength(ModelNameMaxLenght)]
         public string Name { get; set; }
     }
 }

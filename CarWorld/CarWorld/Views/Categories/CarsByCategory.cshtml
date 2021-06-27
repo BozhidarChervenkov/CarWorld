@@ -1,0 +1,30 @@
+﻿@model CarWorld.ViewModels.CarViewModels.CarsListViewModel
+
+@{
+    this.ViewData["Title"] = $"Cars in {this.Model.BodyTypeName} category";
+}
+
+<h1 class="text-center">@this.ViewData["Title"]:</h1>
+
+<hr>
+
+<div class="row">
+    @foreach (var car in this.Model.Cars)
+    {
+
+        <div class="media col-md-4 p-2">
+            <img class="mr-3" src="@car.PictureUrl" width="170" height="105" alt="Generic placeholder image">
+            <div class="media-body">
+                <h5 class="mt-0"><a asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId">@car.MakeName @car.ModelName</a></h5>
+                @car.Description
+            </div>
+        </div>
+    }
+</div>
+
+<hr>
+
+<partial name="_PagingPartial" model="@Model" />
+
+<br>
+<br>

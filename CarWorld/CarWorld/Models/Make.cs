@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using GlobalConstants;
+    using static GlobalConstants.GlobalConstants;
 
     public class Make
     {
@@ -10,8 +10,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.MakeNameMinLenght)]
-        [MaxLength(GlobalConstants.MakeNameMaxLenght)]
+        [MinLength(MakeNameMinLenght)]
+        [MaxLength(MakeNameMaxLenght)]
         public string Name { get; set; }
     }
 }

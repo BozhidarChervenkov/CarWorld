@@ -17,9 +17,10 @@
             this.context = context;
         }
 
+        // TODO: Make method asynchronous
         public void CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId)
         {
-            Car car = new()
+            var car = new Car()
             {
                 Make = inputModel.Make,
                 Model = inputModel.Model,

@@ -19,7 +19,7 @@
         public LatestCars CollectData()
         {
             // Selection of a list of entities with specific columns from database
-            ICollection<CarViewModel> cars = this.context.Cars
+            var cars = this.context.Cars
                                       .OrderByDescending(c => c.CreatedOn)
                                       .Select(c => new CarViewModel()
                                       {
@@ -33,7 +33,7 @@
                                       .ToList();
 
             // Giving the collection of CarViewModel to main view model for Home page
-            LatestCars viewModel = new LatestCars();
+            var viewModel = new LatestCars();
             viewModel.Cars = cars;
 
             return viewModel;

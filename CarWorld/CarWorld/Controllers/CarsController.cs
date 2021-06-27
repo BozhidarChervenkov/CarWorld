@@ -18,7 +18,7 @@
         [HttpGet]
         public IActionResult CarById(int id)
         {
-            CarViewModel viewModel = carService.Car(id);
+            var viewModel = carService.Car(id);
 
             return this.View(viewModel);
         }

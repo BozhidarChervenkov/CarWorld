@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using GlobalConstants;
+    using static GlobalConstants.GlobalConstants;
 
     public class Picture
     {
@@ -10,8 +10,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.PictureUrlMinLenght)]
-        [MaxLength(GlobalConstants.PictureUrlMaxLenght)]
+        [MinLength(PictureUrlMinLenght)]
+        [MaxLength(PictureUrlMaxLenght)]
         public string Url { get; set; }
 
         public int? CarId { get; set; }

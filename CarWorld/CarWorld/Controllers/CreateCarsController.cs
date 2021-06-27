@@ -25,7 +25,7 @@
         {
             ViewBag.BodyTypesSelectList = carsService.BodyTypesSelectList();
 
-            return View();
+            return this.View();
         }
 
         [HttpPost]
@@ -34,14 +34,14 @@
         {
             if (!ModelState.IsValid)
             {
-                return View(inputModel);
+                return this.View(inputModel);
             }
 
             var userId = this.userManager.GetUserId(this.User);
 
             this.carsService.CreateCarAndAddToDb(inputModel, userId);
 
-            return Redirect("~/Home/Index");
+            return this.Redirect("~/Home/Index");
         }
     }
 }

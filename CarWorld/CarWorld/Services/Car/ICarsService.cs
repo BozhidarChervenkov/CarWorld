@@ -7,10 +7,12 @@
 
     public interface ICarsService
     {
+        int DbCarsCount();
+
+        public string BodyTypeName(int bodyTypeId);
+
         CarViewModel Car(int id);
 
-        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);
-
-        int DbCarsCount();
+        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);       
     }
 }

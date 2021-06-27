@@ -21,10 +21,18 @@
             return this.context.Cars.Count();
         }
 
+        public string BodyTypeName(int bodyTypeId)
+        {
+            return this.context.BodyTypes
+                .Where(bt => bt.Id == bodyTypeId)
+                .Select(bt => bt.Name)
+                .FirstOrDefault();
+        }
+
         public CarViewModel Car(int id)
         {
             // Selection of a single entity with specific columns from database
-            CarViewModel car = this.context.Cars
+            var car = this.context.Cars
                                .Where(c=>c.Id == id)
                                .Select(c => new CarViewModel
                                {
@@ -51,7 +59,7 @@
             // 25-36 element: page3
             // Universal pagination formula: (page-1) * itemsPerPage
 
-            IEnumerable<CarInListViewModel> cars = this.context.Cars
+            var cars = this.context.Cars
                 .OrderByDescending(c => c.Id)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)

@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using GlobalConstants;
+    using static GlobalConstants.GlobalConstants;
 
     public class BodyType
     {
@@ -10,8 +10,10 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.BodyTypeNameMinLenght)]
-        [MaxLength(GlobalConstants.BodyTypeNameMaxLenght)]
+        [MinLength(BodyTypeNameMinLenght)]
+        [MaxLength(BodyTypeNameMaxLenght)]
         public string Name { get; set; }
+
+        public string PictureUrl { get; set; }
     }
 }

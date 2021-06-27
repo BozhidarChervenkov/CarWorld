@@ -1,9 +1,9 @@
 ﻿namespace CarWorld.Controllers
-{    
+{
+    using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
-    using System.Diagnostics;
-
+ 
     using CarWorld.Models;
     using CarWorld.Services.Home;
 
@@ -25,18 +25,18 @@
             var viewModel = homeService.CollectData();
             ViewBag.CountsViewModel = countsService.ReturnCounts();
 
-            return View(viewModel);
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return this.View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
