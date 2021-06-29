@@ -11,6 +11,7 @@
         {
             this.Pictures = new List<Picture>();
         }
+        public int Id { get; set; }
 
         public Make Make { get; set; }
 
@@ -26,8 +27,11 @@
 
         public string Description { get; set; }
 
+        public int VotesCount {get; set;}
+
         public DateTime CreatedOn { get; set; }
 
         public List<Picture> Pictures { get; set; }
+
     }
 }

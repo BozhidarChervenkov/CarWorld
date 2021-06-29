@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorld.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210611114302_FixingBrokenDatabase")]
-    partial class FixingBrokenDatabase
+    [Migration("20210627125654_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,6 +104,9 @@ namespace CarWorld.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("BodyTypes");
@@ -117,6 +120,7 @@ namespace CarWorld.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AddedByUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BodyTypeId")
@@ -209,6 +213,32 @@ namespace CarWorld.Migrations
                     b.HasIndex("CarId");
 
                     b.ToTable("Pictures");
+                });
+
+            modelBuilder.Entity("CarWorld.Models.Vote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Votes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -350,7 +380,9 @@ namespace CarWorld.Migrations
                 {
                     b.HasOne("CarWorld.Models.ApplicationUser", "AddedByUser")
                         .WithMany()
-                        .HasForeignKey("AddedByUserId");
+                        .HasForeignKey("AddedByUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CarWorld.Models.BodyType", "BodyType")
                         .WithMany()
@@ -386,6 +418,25 @@ namespace CarWorld.Migrations
                         .HasForeignKey("CarId");
 
                     b.Navigation("Car");
+                });
+
+            modelBuilder.Entity("CarWorld.Models.Vote", b =>
+                {
+                    b.HasOne("CarWorld.Models.Car", "Car")
+                        .WithMany("Votes")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("CarWorld.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -442,6 +493,8 @@ namespace CarWorld.Migrations
             modelBuilder.Entity("CarWorld.Models.Car", b =>
                 {
                     b.Navigation("Pictures");
+
+                    b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618
         }

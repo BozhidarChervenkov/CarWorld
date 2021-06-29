@@ -12,6 +12,7 @@ namespace CarWorld
     using CarWorld.Services.Car;
     using CarWorld.Services.Home;
     using CarWorld.Services.Categories;
+    using CarWorld.Services.Vote;
 
     public class Startup
     {
@@ -49,6 +50,7 @@ namespace CarWorld
             services.AddTransient<ILatestCarsService, LatestCarsService>();
             services.AddTransient<ICountsService, CountsService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IVotesService, VotesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

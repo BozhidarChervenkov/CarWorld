@@ -36,12 +36,14 @@
                                .Where(c=>c.Id == id)
                                .Select(c => new CarViewModel
                                {
+                                   Id = c.Id,
                                    Make = c.Make,
                                    Model = c.Model,
                                    BodyType = c.BodyType,
                                    AddedByUser = c.AddedByUser,
                                    Year = c.Year,
                                    Price = c.Price,
+                                   VotesCount = c.Votes.Sum(v=>(int)v.Type),
                                    Description = c.Description,
                                    CreatedOn = c.CreatedOn,
                                    Pictures = c.Pictures.ToList(),

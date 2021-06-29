@@ -12,11 +12,13 @@
         public Car()
         {
             this.Pictures = new HashSet<Picture>();
+            this.Votes = new HashSet<Vote>();
         }
 
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public string AddedByUserId { get; set; }
 
         public ApplicationUser AddedByUser { get; set; }
@@ -50,6 +52,8 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public ICollection<Picture> Pictures { get; set; }        
+        public ICollection<Picture> Pictures { get; set; }
+
+        public ICollection<Vote> Votes { get; set; }
     }
 }

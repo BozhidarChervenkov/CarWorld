@@ -24,6 +24,8 @@
 
         public DbSet<BodyType> BodyTypes { get; set; }
 
+        public DbSet<Vote> Votes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -32,6 +34,12 @@
                 .HasOne(p => p.Car)
                 .WithMany(c=>c.Pictures)
                 .HasForeignKey(p => p.CarId);
+
+            builder.Entity<Vote>()
+                .HasOne(c => c.Car)
+                .WithMany(c => c.Votes)
+                .HasForeignKey(c=>c.CarId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
