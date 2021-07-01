@@ -6,6 +6,7 @@
     using CarWorld.Data;
     using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.CarViewModels;
+    using Microsoft.EntityFrameworkCore;
 
     public class CarsService : ICarsService
     {
@@ -34,6 +35,8 @@
             // Selection of a single entity with specific columns from database
             var car = this.context.Cars
                                .Where(c=>c.Id == id)
+                               .Include(c => c.MainComments)
+                               .ThenInclude(mc => mc.SubComments)
                                .Select(c => new CarViewModel
                                {
                                    Id = c.Id,
@@ -47,6 +50,7 @@
                                    Description = c.Description,
                                    CreatedOn = c.CreatedOn,
                                    Pictures = c.Pictures.ToList(),
+                                   MainComments = c.MainComments.ToList()
                                })
                                .FirstOrDefault();
 

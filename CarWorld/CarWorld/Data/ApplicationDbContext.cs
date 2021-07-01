@@ -26,6 +26,10 @@
 
         public DbSet<Vote> Votes { get; set; }
 
+        public DbSet<MainComment> MainComments { get; set; }
+
+        public DbSet<SubComment> SubComments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

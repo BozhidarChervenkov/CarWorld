@@ -157,6 +157,34 @@ namespace CarWorld.Migrations
                     b.ToTable("Cars");
                 });
 
+            modelBuilder.Entity("CarWorld.Models.MainComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedByUserId");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("MainComments");
+                });
+
             modelBuilder.Entity("CarWorld.Models.Make", b =>
                 {
                     b.Property<int>("Id")
@@ -211,6 +239,34 @@ namespace CarWorld.Migrations
                     b.HasIndex("CarId");
 
                     b.ToTable("Pictures");
+                });
+
+            modelBuilder.Entity("CarWorld.Models.SubComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MainCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedByUserId");
+
+                    b.HasIndex("MainCommentId");
+
+                    b.ToTable("SubComments");
                 });
 
             modelBuilder.Entity("CarWorld.Models.Vote", b =>
@@ -409,6 +465,19 @@ namespace CarWorld.Migrations
                     b.Navigation("Model");
                 });
 
+            modelBuilder.Entity("CarWorld.Models.MainComment", b =>
+                {
+                    b.HasOne("CarWorld.Models.ApplicationUser", "AddedByUser")
+                        .WithMany()
+                        .HasForeignKey("AddedByUserId");
+
+                    b.HasOne("CarWorld.Models.Car", null)
+                        .WithMany("MainComments")
+                        .HasForeignKey("CarId");
+
+                    b.Navigation("AddedByUser");
+                });
+
             modelBuilder.Entity("CarWorld.Models.Picture", b =>
                 {
                     b.HasOne("CarWorld.Models.Car", "Car")
@@ -416,6 +485,21 @@ namespace CarWorld.Migrations
                         .HasForeignKey("CarId");
 
                     b.Navigation("Car");
+                });
+
+            modelBuilder.Entity("CarWorld.Models.SubComment", b =>
+                {
+                    b.HasOne("CarWorld.Models.ApplicationUser", "AddedByUser")
+                        .WithMany()
+                        .HasForeignKey("AddedByUserId");
+
+                    b.HasOne("CarWorld.Models.MainComment", null)
+                        .WithMany("SubComments")
+                        .HasForeignKey("MainCommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AddedByUser");
                 });
 
             modelBuilder.Entity("CarWorld.Models.Vote", b =>
@@ -490,9 +574,16 @@ namespace CarWorld.Migrations
 
             modelBuilder.Entity("CarWorld.Models.Car", b =>
                 {
+                    b.Navigation("MainComments");
+
                     b.Navigation("Pictures");
 
                     b.Navigation("Votes");
+                });
+
+            modelBuilder.Entity("CarWorld.Models.MainComment", b =>
+                {
+                    b.Navigation("SubComments");
                 });
 #pragma warning restore 612, 618
         }

@@ -239,6 +239,34 @@ namespace CarWorld.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MainComments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CarId = table.Column<int>(type: "int", nullable: true),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MainComments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MainComments_AspNetUsers_AddedByUserId",
+                        column: x => x.AddedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_MainComments_Cars_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Cars",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pictures",
                 columns: table => new
                 {
@@ -282,6 +310,34 @@ namespace CarWorld.Migrations
                         column: x => x.CarId,
                         principalTable: "Cars",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubComments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MainCommentId = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubComments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SubComments_AspNetUsers_AddedByUserId",
+                        column: x => x.AddedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_SubComments_MainComments_MainCommentId",
+                        column: x => x.MainCommentId,
+                        principalTable: "MainComments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -344,9 +400,29 @@ namespace CarWorld.Migrations
                 column: "ModelId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MainComments_AddedByUserId",
+                table: "MainComments",
+                column: "AddedByUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MainComments_CarId",
+                table: "MainComments",
+                column: "CarId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pictures_CarId",
                 table: "Pictures",
                 column: "CarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubComments_AddedByUserId",
+                table: "SubComments",
+                column: "AddedByUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubComments_MainCommentId",
+                table: "SubComments",
+                column: "MainCommentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Votes_CarId",
@@ -380,10 +456,16 @@ namespace CarWorld.Migrations
                 name: "Pictures");
 
             migrationBuilder.DropTable(
+                name: "SubComments");
+
+            migrationBuilder.DropTable(
                 name: "Votes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "MainComments");
 
             migrationBuilder.DropTable(
                 name: "Cars");

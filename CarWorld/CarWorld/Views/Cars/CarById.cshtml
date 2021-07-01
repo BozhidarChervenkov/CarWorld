@@ -60,11 +60,10 @@
                 </div>
             </div>
 
-
             <div class="p-1" style="margin-left: 500px">
                 <h4 class="font-weight-bold">Rating:</h4>
 
-                <div class="row font-weight-bold">
+                <div class="row">
 
                     <a href="#" onclick="sendVote(@Model.Id, true)">
                         <i class="fas fa-thumbs-up" style="margin-right: 5px; margin-left: 20px;"></i>
@@ -79,16 +78,34 @@
                 </div>
             </div>
 
-            
-
             <div class="offset-4 col-md-7">
                 <h4 class="font-weight-bold my-2 "><i class="fas fa-user"></i> Added by: @Model.AddedByUser.FirstName @Model.AddedByUser.LastName</h4>
             </div>
 
             <br>
 
+            <h5 class="font-weight-bold"><i class="fas fa-comments" style="margin-right:10px"></i>Comments:</h5>
+            @{
+                await Html.RenderPartialAsync("_MainCommentPartial", new CarCommentViewModel { CarId = Model.Id, UserId = Model.AddedByUser.Id, MainCommentId = 0 });
+            }
+            @foreach (var mc in Model.MainComments)
+            {
+                <p>@mc.Message --- @mc.CreatedOn</p>
+                <div style="margin-left: 120px">
+                    <h5 class="font-weight-bold"><i class="fas fa-reply" style="margin-right:10px"></i>Replies:</h5>
+                    @{
+                        await Html.RenderPartialAsync("_MainCommentPartial", new CarCommentViewModel { CarId = Model.Id, UserId = Model.AddedByUser.Id, MainCommentId = mc.Id });
+                    }
+                    @foreach (var sc in mc.SubComments)
+                    {
+                        <p>@sc.Message --- @sc.CreatedOn</p>
+                    }
+                </div>
+            }
         </div>
     </div>
+    <br />
+    <br />
 </body>
 </html>
 

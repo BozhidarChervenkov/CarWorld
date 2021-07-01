@@ -33,5 +33,7 @@
 
         public List<Picture> Pictures { get; set; }
 
+        public List<MainComment> MainComments { get; set; }
+
     }
 }

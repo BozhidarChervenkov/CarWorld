@@ -26,8 +26,15 @@ using CarWorld.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
+using CarWorld.ViewModels.CarViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"40db7d2ff46de129debe485fd9024c39cdf98ccf", @"/Views/Categories/All.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dadc35c08ac6a95bdbce36f63d4c09f65aa51392", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e1323963a4b3b8bd7d633891711718644bb8083c", @"/Views/_ViewImports.cshtml")]
     public class Views_Categories_All : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarWorld.ViewModels.CategoriesViewModels.CategoriesInListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Categories", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +90,7 @@ using CarWorld.Models;
 #line hidden
 #nullable disable
             WriteLiteral("        <div class=\"col-md-4 p-3 \">\r\n            <div class=\"card text-white bg-info mb-3\" style=\"max-width: 20rem;\">\r\n                <div class=\"card-header\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40db7d2ff46de129debe485fd9024c39cdf98ccf4674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40db7d2ff46de129debe485fd9024c39cdf98ccf4865", async() => {
 #nullable restore
 #line 14 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\Categories\All.cshtml"
                                                                                                                            Write(category.Name);

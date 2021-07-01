@@ -26,8 +26,15 @@ using CarWorld.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
+using CarWorld.ViewModels.CarViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"147900ef51818b2c9ecee3246cb287a5120ccb1d", @"/Views/Shared/_PagingPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dadc35c08ac6a95bdbce36f63d4c09f65aa51392", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e1323963a4b3b8bd7d633891711718644bb8083c", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__PagingPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarWorld.ViewModels.PagingViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("page-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +89,7 @@ using CarWorld.Models;
             WriteAttributeValue(" ", 202, "", 203, 1, true);
             EndWriteAttribute();
             WriteLiteral(">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d4912", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d5103", async() => {
                 WriteLiteral("Previous");
             }
             );
@@ -132,7 +139,7 @@ using CarWorld.Models;
 #line hidden
 #nullable disable
             WriteLiteral("                <li class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d7715", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d7906", async() => {
 #nullable restore
 #line 12 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\Shared\_PagingPartial.cshtml"
                                                                                          Write(i);
@@ -212,7 +219,7 @@ using CarWorld.Models;
 #line hidden
 #nullable disable
             WriteLiteral("                <li class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d11569", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d11760", async() => {
 #nullable restore
 #line 25 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\Shared\_PagingPartial.cshtml"
                                                                                          Write(i);
@@ -282,7 +289,7 @@ using CarWorld.Models;
 #line hidden
 #nullable disable
             WriteLiteral(">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d15025", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "147900ef51818b2c9ecee3246cb287a5120ccb1d15216", async() => {
                 WriteLiteral("Next");
             }
             );

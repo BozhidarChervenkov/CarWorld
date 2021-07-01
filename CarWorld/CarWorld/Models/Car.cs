@@ -13,6 +13,7 @@
         {
             this.Pictures = new HashSet<Picture>();
             this.Votes = new HashSet<Vote>();
+            this.MainComments = new HashSet<MainComment>();
         }
 
         [Key]
@@ -55,5 +56,7 @@
         public ICollection<Picture> Pictures { get; set; }
 
         public ICollection<Vote> Votes { get; set; }
+
+        public ICollection<MainComment> MainComments { get; set; }
     }
 }
