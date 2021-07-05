@@ -53,6 +53,8 @@
 
         public DateTime CreatedOn { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public ICollection<Picture> Pictures { get; set; }
 
         public ICollection<Vote> Votes { get; set; }

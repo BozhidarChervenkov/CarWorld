@@ -2,12 +2,12 @@
 {
     using System;
     using System.Linq;
+    using Microsoft.EntityFrameworkCore;
 
     using CarWorld.Data;
     using CarWorld.Models;
     using CarWorld.ViewModels.CarViewModels;
-    using Microsoft.EntityFrameworkCore;
-
+    
     public class CommentsService : ICommentsService
     {
         private readonly ApplicationDbContext context;

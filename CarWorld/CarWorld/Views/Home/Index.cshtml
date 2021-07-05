@@ -34,7 +34,7 @@
                 <img src="@car.PictureUrl" class="card-img-top" width="260" height="150" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">@car.MakeName @car.ModelName</h5>
-                    <p class="card-text">@car.Description</p>
+                    <p class="card-text">@car.ShortDescription</p>
                     <div class="text-center">
                         <a asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId" class="btn btn-primary">Check it out!</a>
                     </div>
@@ -42,7 +42,6 @@
             </div>
         }
     </div>
-    <br>
 </div>
 
 @section Scripts

@@ -3,8 +3,8 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Authorization;
 
-    using CarWorld.ViewModels.CarViewModels;
     using CarWorld.Services.Comment;
+    using CarWorld.ViewModels.CarViewModels;  
 
     public class CommentsController : Controller
     {
@@ -21,12 +21,12 @@
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("CarById", "Cars", new { @id = input.CarId });
+                return this.RedirectToAction("CarById", "Cars", new { @id = input.CarId });
             }
 
             this.commentsService.CheckCommentTypeAndAddToDb(input);
 
-            return RedirectToAction("CarById", "Cars", new { @id = input.CarId });
+            return this.RedirectToAction("CarById", "Cars", new { @id = input.CarId });
         }
     }
 }

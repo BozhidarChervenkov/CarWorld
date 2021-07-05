@@ -11,6 +11,7 @@
         {
             this.Pictures = new List<Picture>();
         }
+
         public int Id { get; set; }
 
         public Make Make { get; set; }

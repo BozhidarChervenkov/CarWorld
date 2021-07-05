@@ -1,12 +1,12 @@
 ﻿namespace CarWorld.Services.Home
 {
     using System.Linq;
-    using System.Collections.Generic;
 
     using CarWorld.Data;
-    using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.HomePageViewModels;
-    
+
+    using static GlobalConstants.GlobalConstants;
+
     public class LatestCarsService : ILatestCarsService
     {
         private readonly ApplicationDbContext context;
@@ -20,6 +20,7 @@
         {
             // Selection of a list of entities with specific columns from database
             var cars = this.context.Cars
+                                      .Where(c=>c.IsDeleted == false)
                                       .OrderByDescending(c => c.CreatedOn)
                                       .Select(c => new CarViewModel()
                                       {
@@ -29,7 +30,7 @@
                                           Description = c.Description,
                                           PictureUrl = c.Pictures.FirstOrDefault().Url
                                       })
-                                      .Take(GlobalConstants.HomeCarsPerPage)
+                                      .Take(HomeCarsPerPage)
                                       .ToList();
 
             // Giving the collection of CarViewModel to main view model for Home page

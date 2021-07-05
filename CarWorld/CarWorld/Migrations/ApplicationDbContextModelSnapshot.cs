@@ -132,6 +132,9 @@ namespace CarWorld.Migrations
                         .HasMaxLength(1500)
                         .HasColumnType("nvarchar(1500)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("MakeId")
                         .HasColumnType("int");
 
@@ -167,7 +170,7 @@ namespace CarWorld.Migrations
                     b.Property<string>("AddedByUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("CarId")
+                    b.Property<int>("CarId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -471,11 +474,15 @@ namespace CarWorld.Migrations
                         .WithMany()
                         .HasForeignKey("AddedByUserId");
 
-                    b.HasOne("CarWorld.Models.Car", null)
+                    b.HasOne("CarWorld.Models.Car", "Car")
                         .WithMany("MainComments")
-                        .HasForeignKey("CarId");
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AddedByUser");
+
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("CarWorld.Models.Picture", b =>

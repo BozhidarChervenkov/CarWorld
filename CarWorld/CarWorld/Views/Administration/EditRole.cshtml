@@ -1,0 +1,51 @@
+﻿@model CarWorld.ViewModels.AdministrationViewModels.EditRoleViewModel
+
+@{
+    this.ViewData["Title"] = "Edit role";
+}
+
+<h3 class="display-4 text-center mb-3">@this.ViewData["Title"]:</h3>
+
+<form method="post" class="mt-3">
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+        <input type="text" asp-for="Id" disabled class="form-control" />
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="RoleName" class="col-sm-2 col-form-label"></label>
+        <input type="text" asp-for="RoleName" class="form-control" />
+        <span asp-validation-for="RoleName" class="text-danger"> </span>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-danger">Update</button>
+            <a class="btn btn-dark" asp-controller="Administration" asp-action="ListRoles">Cancel</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: auto">
+        <div class="card-header">
+            <h3>Users in this role:</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.Users.Any())
+            {
+                foreach (var userNames in Model.Users)
+                {
+                    <h5 class="card-title">@userNames</h5>
+                }
+            }
+            else
+            {
+                <h5 class="card-title">None at the moment!</h5>
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Administration" asp-action="EditUsersInRole" asp-route-roleId="@Model.Id" class="btn btn-success" style="width: auto">Add or Remove users</a>
+        </div>
+    </div>
+</form>

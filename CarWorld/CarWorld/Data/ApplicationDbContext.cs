@@ -1,7 +1,7 @@
 ﻿namespace CarWorld.Data
-{   
-    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+{
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;   
 
     using CarWorld.Models;
 
@@ -40,9 +40,9 @@
                 .HasForeignKey(p => p.CarId);
 
             builder.Entity<Vote>()
-                .HasOne(c => c.Car)
+                .HasOne(v => v.Car)
                 .WithMany(c => c.Votes)
-                .HasForeignKey(c=>c.CarId)
+                .HasForeignKey(v=>v.CarId)
                 .OnDelete(DeleteBehavior.NoAction);
         }
     }

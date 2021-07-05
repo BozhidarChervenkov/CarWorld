@@ -5,11 +5,13 @@
         // Home page constants:
 
         public const int HomeCarsPerPage = 8;
+        public const int HomeCarDescriptionLength = 80;
 
         // Cars/All page constants:
 
         public const int MinStartingPageNumber = 1;
         public const int MaxCarsPerPageCount = 12;
+        public const int AllPageCarDescriptionLength = 70;
 
         // Model validation constants:
 

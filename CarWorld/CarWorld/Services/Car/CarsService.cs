@@ -1,12 +1,14 @@
 ﻿namespace CarWorld.Services.Car
 {
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
 
     using CarWorld.Data;
-    using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.CarViewModels;
-    using Microsoft.EntityFrameworkCore;
+
+    using static GlobalConstants.GlobalConstants;
 
     public class CarsService : ICarsService
     {
@@ -34,7 +36,7 @@
         {
             // Selection of a single entity with specific columns from database
             var car = this.context.Cars
-                               .Where(c=>c.Id == id)
+                               .Where(c=>c.Id == id && c.IsDeleted == false)
                                .Include(c => c.MainComments)
                                .ThenInclude(mc => mc.SubComments)
                                .Select(c => new CarViewModel
@@ -57,7 +59,7 @@
             return car;
         }
 
-        public IEnumerable<CarInListViewModel> GetAll(int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount)
+        public IEnumerable<CarInListViewModel> GetAll(int page, int itemsPerPage = MaxCarsPerPageCount)
         {
             // Pagination Logic:
             // 1-12 element: page1
@@ -66,6 +68,7 @@
             // Universal pagination formula: (page-1) * itemsPerPage
 
             var cars = this.context.Cars
+                .Where(c=>c.IsDeleted == false)
                 .OrderByDescending(c => c.Id)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)
@@ -81,6 +84,24 @@
                 .ToList();
 
             return cars;
+        }
+
+        public async Task<bool> DeleteCar(int id)
+        {
+            var car = this.context.Cars
+                .FirstOrDefault(c => c.Id == id);
+
+            if (car == null)
+            {
+                return false;
+            }
+            else
+            {
+                car.IsDeleted = true;
+                await this.context.SaveChangesAsync();
+
+                return true;
+            }
         }
     }
 }

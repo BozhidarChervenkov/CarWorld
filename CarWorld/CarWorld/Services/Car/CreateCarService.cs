@@ -34,7 +34,6 @@
             };
 
             this.context.Cars.Add(car);
-
             this.context.SaveChanges();
         }
 

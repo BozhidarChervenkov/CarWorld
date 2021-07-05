@@ -4,9 +4,10 @@
     using System.Collections.Generic;
 
     using CarWorld.Data;
-    using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.CategoriesViewModels;
     using CarWorld.ViewModels.CarViewModels;
+
+    using static GlobalConstants.GlobalConstants;
 
     public class CategoryService : ICategoryService
     {
@@ -35,7 +36,7 @@
             return viewModel;
         }
 
-        public IEnumerable<CarInListViewModel> GetAll(int page, int bodyTypeId, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount)
+        public IEnumerable<CarInListViewModel> GetAll(int page, int bodyTypeId, int itemsPerPage = MaxCarsPerPageCount)
         {
             // Pagination Logic:
             // 1-12 element: page1

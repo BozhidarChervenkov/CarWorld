@@ -1,6 +1,7 @@
 ﻿namespace CarWorld.Services.Car
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using CarWorld.GlobalConstants;
     using CarWorld.ViewModels.CarViewModels;
@@ -13,6 +14,8 @@
 
         CarViewModel Car(int id);
 
-        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);       
+        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);
+
+        Task<bool> DeleteCar(int id);
     }
 }

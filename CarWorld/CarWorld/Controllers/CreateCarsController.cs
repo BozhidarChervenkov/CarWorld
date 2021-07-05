@@ -1,9 +1,9 @@
 ﻿namespace CarWorld.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Authorization;
+    
     using CarWorld.Models;
     using CarWorld.Services.Car;
     using CarWorld.ViewModels.CreateCarViewModels;

@@ -1,0 +1,51 @@
+﻿@model CarWorld.ViewModels.AdministrationViewModels.AllRolesViewModel
+
+@{
+    this.ViewData["Title"] = "All roles";
+}
+
+<h3 class="display-4 text-center mb-3">@this.ViewData["Title"]:</h3>
+
+@if (Model.Roles.Any())
+{
+    <div class="text-center">
+        <a class="btn btn-success mb-3" style="width: auto" asp-controller="Administration" asp-action="CreateRole">
+            Create New Role
+        </a>
+    </div>
+
+    foreach (var role in Model.Roles)
+    {
+        <div class="card mb-3">
+            <div class="card-header mb-3">
+                Role Id: @role.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Role name: @role.Name</h5>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-danger" asp-controller="Administration" asp-action="EditRole" asp-route-id="@role.Id">Edit</a>
+                <a class="btn btn-primary" asp-controller="Administration" asp-action="DeleteRole">Delete</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            <p>No roles yet created!</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button bellow to create a role:
+            </h5>
+            <a asp-controller="Administration" asp-action="CreateRole" class="btn btn-primary" style="width: auto">
+                Create Role
+            </a>
+        </div>
+    </div>
+}
+
+<br>
+<br>

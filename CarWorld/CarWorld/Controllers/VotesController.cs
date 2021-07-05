@@ -1,14 +1,14 @@
 ﻿namespace CarWorld.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Authorization;    
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Authorization;       
 
+    using CarWorld.Models;
     using CarWorld.Services.Vote;
     using CarWorld.ViewModels.VotesViewModels;
-    using Microsoft.AspNetCore.Identity;
-    using CarWorld.Models;
-
+    
     [ApiController]
     [Route("api/[controller]")]
     public class VotesController : Controller

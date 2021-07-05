@@ -2,10 +2,11 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
-    using CarWorld.Services.Categories;
-    using CarWorld.GlobalConstants;
-    using CarWorld.ViewModels.CarViewModels;
     using CarWorld.Services.Car;
+    using CarWorld.Services.Categories;
+    using CarWorld.ViewModels.CarViewModels;
+
+    using static GlobalConstants.GlobalConstants;
 
     public class CategoriesController : Controller
     {
@@ -27,13 +28,13 @@
         }
 
         [HttpGet]
-        public IActionResult CarsByCategory(int id, int pageId = GlobalConstants.MinStartingPageNumber)
+        public IActionResult CarsByCategory(int id, int pageId = MinStartingPageNumber)
         {
             var viewModel = new CarsListViewModel
             {
-                Cars = this.categoryService.GetAll(pageId, id, GlobalConstants.MaxCarsPerPageCount),
+                Cars = this.categoryService.GetAll(pageId, id, MaxCarsPerPageCount),
                 PageNumber = pageId,
-                ItemsPerPage = GlobalConstants.MaxCarsPerPageCount,
+                ItemsPerPage = MaxCarsPerPageCount,
                 DbCarsCount = this.carService.DbCarsCount(),
                 BodyTypeName = this.carService.BodyTypeName(id)
             };
