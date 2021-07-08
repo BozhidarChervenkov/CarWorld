@@ -16,7 +16,7 @@
             <img class="mr-3" src="@car.PictureUrl" width="170" height="105" alt="Generic placeholder image">
             <div class="media-body">
                 <h5 class="mt-0"><a asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId">@car.MakeName @car.ModelName</a></h5>
-                @car.Description
+                @car.ShortDescription
             </div>
         </div>
     }

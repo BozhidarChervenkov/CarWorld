@@ -30,6 +30,13 @@
         [HttpGet]
         public IActionResult CarsByCategory(int id, int pageId = MinStartingPageNumber)
         {
+            if (this.categoryService.CategoryExists(id) == false)
+            {
+                ViewBag.ErrorMessage = $"Category with Id = {id} cannot be found!";
+
+                return this.View("NotFound");
+            }
+
             var viewModel = new CarsListViewModel
             {
                 Cars = this.categoryService.GetAll(pageId, id, MaxCarsPerPageCount),

@@ -18,6 +18,18 @@
             this.context = context;
         }
 
+        public bool CategoryExists(int id)
+        {
+            var category = this.context.BodyTypes.Where(bt => bt.Id == id).FirstOrDefault();
+
+            if (category == null)
+            {
+                return false;
+            }    
+            
+            return true;    
+        }
+
         public CategoriesInListViewModel Categories()
         {
             var categories = this.context.BodyTypes
@@ -36,6 +48,7 @@
             return viewModel;
         }
 
+       
         public IEnumerable<CarInListViewModel> GetAll(int page, int bodyTypeId, int itemsPerPage = MaxCarsPerPageCount)
         {
             // Pagination Logic:
@@ -45,7 +58,7 @@
             // Universal pagination formula: (page-1) * itemsPerPage
 
             var cars = this.context.Cars
-                .Where(c=>c.BodyTypeId == bodyTypeId)
+                .Where(c=>c.BodyTypeId == bodyTypeId && c.IsDeleted == false)
                 .OrderByDescending(c => c.Id)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)

@@ -54,6 +54,34 @@
         }
 
         [HttpGet]
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            var role = await roleManager.FindByIdAsync(id);
+
+            if (role == null)
+            {
+                ViewBag.ErrorMessage = $"Role with Id: {id} cannot be found!";
+
+                return this.View("NotFound");
+            }
+            else
+            {
+               var result = await this.roleManager.DeleteAsync(role);
+
+                if (result.Succeeded)
+                {
+                    return this.RedirectToAction("ListRoles");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return this.View("ListRoles");
+            }
+        }
+
+        [HttpGet]
         public async Task<IActionResult> EditRole(string id)
         {
             var role = await roleManager.FindByIdAsync(id);

@@ -7,6 +7,8 @@
 
     public interface ICategoryService
     {
+        bool CategoryExists(int id);
+
         CategoriesInListViewModel Categories();
 
         IEnumerable<CarInListViewModel> GetAll(int page, int bodyTypeId, int itemsPerPage);
