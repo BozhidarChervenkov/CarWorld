@@ -1,0 +1,60 @@
+﻿@model CarWorld.ViewModels.SearchCarViewModels.SearchCarInputModel
+
+@{
+    this.ViewData["Title"] = $"Search cars";
+}
+
+<h1 class="text-center m-3"><u>@this.ViewData["Title"]:</u></h1>
+
+<form method="post" asp-controller="Search" asp-action="SearchForCars">
+    <div class="input-group mb-5">
+        <input class="form-control" asp-for="SearchTerm" placeholder="Enter your car make/model here:" />
+        <div class="group-append">
+            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Search</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.SearchResult.Count() != 0)
+{
+
+    <h1 class="text-center mb-4">Results catalogue:</h1>
+
+    <hr>
+
+    @foreach (var car in Model.SearchResult)
+    {
+        <div class="row text-center justify-content-center mb-2">
+            <div class="card mb-3">
+                <div class="text-center">
+                    <img src="@car.PictureUrl" style="width:650px; height:350px" class="card-img-top rounded">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@car.MakeName @car.ModelName</h5>
+                    <p class="card-text">@car.ShortDescription</p>
+                    <a class="btn btn-info" asp-controller="Cars" asp-action="CarById" asp-route-id="@car.CarId">Check it out!</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    <hr>
+}
+else
+{
+    <div class="text-center mb-5">
+        <img src="~/Images/MisteryCar.jpg" class="rounded" style="width:650px; height: 350px" />
+    </div>
+}
+
+<figure class="text-center">
+    <blockquote class="blockquote">
+        <p>'Seek and you shall find'</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        Someone famous in <cite title="Source Title">The Bible</cite>
+    </figcaption>
+</figure>
+
+
+

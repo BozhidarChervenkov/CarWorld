@@ -41,7 +41,7 @@
                 @foreach (var picture in Model.Pictures)
                 {
                     <div class="carousel-item @(picture == Model.Pictures.First() ? "active" : "")">
-                        <img class="center-block img-responsive" width="680" height="400" src="@picture.Url.ToString()" alt="">
+                        <img class="center-block img-responsive rounded" width="680" height="400" src="@picture.Url.ToString()" alt="">
                     </div>
                 }
             </div>

@@ -18,7 +18,7 @@
         {
             CountsViewModel countsViewModel = new()
             {
-                CarsCountInDb = context.Cars.Count(),
+                CarsCountInDb = context.Cars.Count(c=>c.IsDeleted == false),
                 MakesCountInDb = context.Makes.Count(),
                 ModelsCountInDb = context.Models.Count(),
                 PicturesCountInDb = context.Pictures.Count()
