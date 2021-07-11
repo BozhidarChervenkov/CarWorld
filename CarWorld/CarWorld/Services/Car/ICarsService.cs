@@ -14,8 +14,8 @@
 
         CarViewModel Car(int id);
 
-        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);
-
         Task<bool> DeleteCar(int id);
+
+        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);
     }
 }

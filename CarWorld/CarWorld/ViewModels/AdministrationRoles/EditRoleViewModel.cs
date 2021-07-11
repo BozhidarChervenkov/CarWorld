@@ -1,4 +1,4 @@
-﻿namespace CarWorld.ViewModels.AdministrationViewModels
+﻿namespace CarWorld.ViewModels.AdministrationRoles
 {
     using System.ComponentModel;
     using System.Collections.Generic;   

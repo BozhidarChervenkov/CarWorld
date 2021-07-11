@@ -1,4 +1,4 @@
-﻿@model CarWorld.ViewModels.CreateCarViewModels.CreateCarInputModel
+﻿@model CreateCarInputModel
 
 @{
     this.ViewData["Title"] = "Add new car";
@@ -6,7 +6,7 @@
 <div class="container">
     <h3 class="display-4 text-center">Add new car:</h3>
 
-    <form asp-controller="CreateCars" asp-action="Add" method="post" class="col-md-8 offset-2 mb-md-5">
+    <form asp-controller="CreateCars" asp-action="Add" method="post" class="col-md-8 offset-2">
 
         <div class="form-group">
             <label asp-for="Make" class="control-label"></label>
@@ -55,8 +55,6 @@
         </div>
     </form>
 </div>
-
-
 
 @section Scripts
 { 

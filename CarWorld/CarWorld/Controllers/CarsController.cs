@@ -1,5 +1,6 @@
 ﻿namespace CarWorld.Controllers
 {
+    using System.Security.Claims;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
@@ -21,7 +22,11 @@
         [HttpGet]
         public IActionResult CarById(int id)
         {
-            var viewModel = carService.Car(id);
+            var viewModel = this.carService.Car(id);
+
+            var currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            viewModel.CurrentUserId = currentUserId;
 
             if (viewModel == null)
             {
@@ -47,6 +52,7 @@
             return this.View(viewModel);
         }
 
+        //Todo: Find a way to let users delete their own cars! 
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> DeleteCar(int id)

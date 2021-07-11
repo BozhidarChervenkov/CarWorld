@@ -1,4 +1,4 @@
-﻿@model CarWorld.ViewModels.AdministrationViewModels.CreateRoleInputModel
+﻿@model CreateRoleInputModel
 
 @{
     this.ViewData["Title"] = "Create New Role";
@@ -6,7 +6,7 @@
 
 <h3 class="display-4 text-center">@this.ViewData["Title"]:</h3>
 
-<form asp-controller="Administration" asp-action="CreateRole" method="post" class="col-md-8 offset-2 mb-md-5">
+<form asp-controller="AdministrationRoles" asp-action="CreateRole" method="post" class="col-md-8 offset-2 mb-md-5">
 
     <div class="text-danger" asp-validation-summary="All"></div>
 
@@ -20,3 +20,7 @@
         <button type="submit" formmethod="post" class="btn-success btn-lg">Create Role</button>
     </div>
 </form>
+
+@section Scripts{
+<partial name="_ValidationScriptsPartial" />
+}

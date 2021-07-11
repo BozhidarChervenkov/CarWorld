@@ -1,4 +1,4 @@
-﻿@model CarWorld.ViewModels.AdministrationViewModels.AllRolesViewModel
+﻿@model AllRolesViewModel
 
 @{
     this.ViewData["Title"] = "All roles";
@@ -9,7 +9,7 @@
 @if (Model.Roles.Any())
 {
     <div class="text-center">
-        <a class="btn btn-success mb-3" style="width: auto" asp-controller="Administration" asp-action="CreateRole">
+        <a class="btn btn-success mb-3" style="width: auto" asp-controller="AdministrationRoles" asp-action="CreateRole">
             Create New Role
         </a>
     </div>
@@ -24,8 +24,8 @@
                 <h5 class="card-title">Role name: @role.Name</h5>
             </div>
             <div class="card-footer">
-                <a class="btn btn-danger" asp-controller="Administration" asp-action="EditRole" asp-route-id="@role.Id">Edit</a>
-                <a class="btn btn-danger" asp-controller="Administration" asp-action="DeleteRole" asp-route-id="@role.Id">Delete</a>
+                <a class="btn btn-danger" asp-controller="AdministrationRoles" asp-action="EditRole" asp-route-id="@role.Id">Edit</a>
+                <a class="btn btn-danger" asp-controller="AdministrationRoles" asp-action="DeleteRole" asp-route-id="@role.Id">Delete</a>
             </div>
         </div>
     }
@@ -40,7 +40,7 @@ else
             <h5 class="card-title">
                 Use the button bellow to create a role:
             </h5>
-            <a asp-controller="Administration" asp-action="CreateRole" class="btn btn-primary" style="width: auto">
+            <a asp-controller="AdministrationRoles" asp-action="CreateRole" class="btn btn-primary" style="width: auto">
                 Create Role
             </a>
         </div>

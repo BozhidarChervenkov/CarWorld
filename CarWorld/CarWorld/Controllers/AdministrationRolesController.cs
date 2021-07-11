@@ -7,15 +7,15 @@
     using Microsoft.AspNetCore.Authorization;
 
     using CarWorld.Models;
-    using CarWorld.ViewModels.AdministrationViewModels;
+    using CarWorld.ViewModels.AdministrationRoles;
 
     [Authorize(Roles = "Admin")]
-    public class AdministrationController : Controller
+    public class AdministrationRolesController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public AdministrationController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
+        public AdministrationRolesController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
@@ -42,7 +42,7 @@
 
                 if (result.Succeeded)
                 {
-                    return this.RedirectToAction("ListRoles", "Administration");
+                    return this.RedirectToAction("ListRoles");
                 }
                 foreach (IdentityError error in result.Errors)
                 {
@@ -126,7 +126,7 @@
 
                 if (resut.Succeeded)
                 {
-                    return this.RedirectToAction("ListRoles", "Administration");
+                    return this.RedirectToAction("ListRoles");
                 }
                 foreach (var error in resut.Errors)
                 {

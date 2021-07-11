@@ -22,6 +22,8 @@
 
         public ApplicationUser AddedByUser { get; set; }
 
+        public string CurrentUserId { get; set; }
+
         public int Year { get; set; }
 
         public decimal Price { get; set; }

@@ -59,6 +59,24 @@
             return car;
         }
 
+        public async Task<bool> DeleteCar(int id)
+        {
+            var car = this.context.Cars
+                .FirstOrDefault(c => c.Id == id);
+
+            if (car == null)
+            {
+                return false;
+            }
+            else
+            {
+                car.IsDeleted = true;
+                await this.context.SaveChangesAsync();
+
+                return true;
+            }
+        }
+
         public IEnumerable<CarInListViewModel> GetAll(int page, int itemsPerPage = MaxCarsPerPageCount)
         {
             // Pagination Logic:
@@ -84,24 +102,6 @@
                 .ToList();
 
             return cars;
-        }
-
-        public async Task<bool> DeleteCar(int id)
-        {
-            var car = this.context.Cars
-                .FirstOrDefault(c => c.Id == id);
-
-            if (car == null)
-            {
-                return false;
-            }
-            else
-            {
-                car.IsDeleted = true;
-                await this.context.SaveChangesAsync();
-
-                return true;
-            }
         }
     }
 }

@@ -27,7 +27,7 @@
         </div>
 
         <div class="text-center">
-        @if (this.User.IsInRole("Admin"))
+        @if (this.User.IsInRole("Admin") || (Model.CurrentUserId == Model.AddedByUser.Id))
         {
             <a asp-controller="Cars" asp-action="DeleteCar" asp-route-id="@Model.Id" class="btn btn-danger" style="width: auto">Delete car</a>
         }
