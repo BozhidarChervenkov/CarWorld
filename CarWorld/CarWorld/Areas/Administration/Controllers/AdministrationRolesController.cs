@@ -1,4 +1,4 @@
-﻿namespace CarWorld.Controllers
+﻿namespace CarWorld.Areas.Administration
 {
     using System.Threading.Tasks;
     using System.Collections.Generic;
@@ -7,8 +7,9 @@
     using Microsoft.AspNetCore.Authorization;
 
     using CarWorld.Models;
-    using CarWorld.ViewModels.AdministrationRoles;
+    using CarWorld.Areas.Administration.ViewModels.AdministrationRoles;
 
+    [Area("Administration")]
     [Authorize(Roles = "Admin")]
     public class AdministrationRolesController : Controller
     {

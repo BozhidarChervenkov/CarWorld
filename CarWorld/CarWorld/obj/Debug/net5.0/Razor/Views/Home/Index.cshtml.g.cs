@@ -63,20 +63,13 @@ using CarWorld.ViewModels.SearchCarViewModels;
 #nullable disable
 #nullable restore
 #line 8 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
-using CarWorld.ViewModels.AdministrationRoles;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 9 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
 using CarWorld.ViewModels.CategoriesViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8777675f52c9db84ae0946335eb534bf5a3f6843", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"639aa1e2f0913cb5be69b202327a3ba09f3a9274", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efa60a835215e6492d7f6185671f25ab4f618927", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<LatestCars>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Cars", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -203,7 +196,7 @@ WriteAttributeValue("", 1175, car.PictureUrl, 1175, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                    <div class=\"text-center\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8777675f52c9db84ae0946335eb534bf5a3f68439487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8777675f52c9db84ae0946335eb534bf5a3f68439290", async() => {
                 WriteLiteral("Check it out!");
             }
             );

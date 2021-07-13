@@ -49,6 +49,8 @@ namespace CarWorld
 
             services.AddControllersWithViews();
 
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             services.AddTransient<ICreateCarService, CreateCarService>();
             services.AddTransient<ICarsService, CarsService>();
             services.AddTransient<ILatestCarsService, LatestCarsService>();
@@ -84,12 +86,16 @@ namespace CarWorld
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                name: "MyArea",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Categories}/{action=CarsByCategory}/{bodyTypeId?}/{pageId?}");
-                endpoints.MapRazorPages();
+                endpoints.MapRazorPages();       
             });
         }
     }

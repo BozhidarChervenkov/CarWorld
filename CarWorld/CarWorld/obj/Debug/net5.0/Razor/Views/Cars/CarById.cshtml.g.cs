@@ -63,20 +63,13 @@ using CarWorld.ViewModels.SearchCarViewModels;
 #nullable disable
 #nullable restore
 #line 8 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
-using CarWorld.ViewModels.AdministrationRoles;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 9 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
 using CarWorld.ViewModels.CategoriesViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a5fde9b21ad9a3342ebf2c449621647f6d4a233", @"/Views/Cars/CarById.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"639aa1e2f0913cb5be69b202327a3ba09f3a9274", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efa60a835215e6492d7f6185671f25ab4f618927", @"/Views/_ViewImports.cshtml")]
     public class Views_Cars_CarById : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarWorld.ViewModels.CarViewModels.CarViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Cars", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -119,7 +112,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!doctype html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2336318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2336121", async() => {
                 WriteLiteral(@"
     <!-- Required meta tags -->
     <meta charset=""utf-8"">
@@ -140,7 +133,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2337697", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2337500", async() => {
                 WriteLiteral(@"
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -176,7 +169,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line hidden
 #nullable disable
                 WriteLiteral("            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2339659", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a5fde9b21ad9a3342ebf2c449621647f6d4a2339462", async() => {
                     WriteLiteral("Delete car");
                 }
                 );

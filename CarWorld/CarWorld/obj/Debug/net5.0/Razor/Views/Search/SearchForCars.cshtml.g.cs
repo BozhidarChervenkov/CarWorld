@@ -63,20 +63,13 @@ using CarWorld.ViewModels.SearchCarViewModels;
 #nullable disable
 #nullable restore
 #line 8 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
-using CarWorld.ViewModels.AdministrationRoles;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 9 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
 using CarWorld.ViewModels.CategoriesViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"184af466d0f1192e8ff67af23be3310e9d698f92", @"/Views/Search/SearchForCars.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"639aa1e2f0913cb5be69b202327a3ba09f3a9274", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efa60a835215e6492d7f6185671f25ab4f618927", @"/Views/_ViewImports.cshtml")]
     public class Views_Search_SearchForCars : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SearchCarInputModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form-control"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -136,9 +129,9 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line hidden
 #nullable disable
             WriteLiteral(":</u></h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184af466d0f1192e8ff67af23be3310e9d698f929217", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184af466d0f1192e8ff67af23be3310e9d698f929020", async() => {
                 WriteLiteral("\r\n    <div class=\"input-group mb-5\">\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "184af466d0f1192e8ff67af23be3310e9d698f929523", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "184af466d0f1192e8ff67af23be3310e9d698f929326", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -235,7 +228,7 @@ WriteAttributeValue("", 895, car.PictureUrl, 895, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184af466d0f1192e8ff67af23be3310e9d698f9215106", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "184af466d0f1192e8ff67af23be3310e9d698f9214909", async() => {
                 WriteLiteral("Check it out!");
             }
             );
@@ -287,7 +280,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"text-center mb-5\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "184af466d0f1192e8ff67af23be3310e9d698f9218124", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "184af466d0f1192e8ff67af23be3310e9d698f9217927", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

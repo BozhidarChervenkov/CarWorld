@@ -776,7 +776,6 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.RazorTargetAssemblyInfo.cache
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.RazorTargetAssemblyInfo.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.Views.pdb
@@ -845,7 +844,11 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.csproj.Asse
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_MainCommentPartial.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\NotFound.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Search\SearchForCars.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\AdministrationRoles\CreateRole.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\AdministrationRoles\EditRole.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\AdministrationRoles\EditUsersInRole.cshtml.g.cs
-D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\AdministrationRoles\ListRoles.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationRoles\CreateRole.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationRoles\EditRole.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationRoles\EditUsersInRole.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationRoles\ListRoles.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\_Layout.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs

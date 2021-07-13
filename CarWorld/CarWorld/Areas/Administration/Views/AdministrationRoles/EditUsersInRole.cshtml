@@ -1,4 +1,4 @@
-﻿@model List<UserRoleViewModel>
+﻿@model List<CarWorld.Areas.Administration.ViewModels.AdministrationRoles.UserRoleViewModel>
 
 @{
     this.ViewData["Title"] = "Edit users in role";
@@ -26,7 +26,7 @@
         </div>
         <div class="card-footer">
             <input type="submit" value="Update" class="btn btn-success" style="width:auto">
-            <a class="btn btn-dark" asp-controller="AdministrationRoles" asp-action="EditRole" asp-route-Id="@roleId">Cancel</a>
+            <a class="btn btn-dark" asp-area="Administration" asp-controller="AdministrationRoles" asp-action="EditRole" asp-route-Id="@roleId">Cancel</a>
         </div>
     </div>
 </form>

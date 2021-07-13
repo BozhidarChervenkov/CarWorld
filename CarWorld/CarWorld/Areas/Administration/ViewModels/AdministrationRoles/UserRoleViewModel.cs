@@ -1,4 +1,4 @@
-﻿namespace CarWorld.ViewModels.AdministrationRoles
+﻿namespace CarWorld.Areas.Administration.ViewModels.AdministrationRoles
 {
     public class UserRoleViewModel
     {

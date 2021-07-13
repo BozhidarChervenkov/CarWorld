@@ -1,4 +1,4 @@
-﻿namespace CarWorld.ViewModels.AdministrationRoles
+﻿namespace CarWorld.Areas.Administration.ViewModels.AdministrationRoles
 {
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Identity;
