@@ -4,9 +4,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center p-2">
+<div class="text-center p-2 mb-2">
     <div class="">
         <h1 id="lblGreetings"></h1>
+    </div>
+</div>
+
+<div class="row text-center offset-1 col-md-10 mb-1">
+    <div id="carouselExampleControls" class="carousel slide text-center" style="width:900px; height:450px" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Images/IndexImage_1.jpg" class="d-block w-100 rounded" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/IndexImage_2.jpg" class="d-block w-100 rounded" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/IndexImage_3.jpg" class="d-block w-100 rounded" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/IndexImage_4.jpg" class="d-block w-100 rounded" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
 
@@ -62,4 +89,4 @@
         document.getElementById('lblGreetings').innerHTML =
             '<b>' + greet + '</b> and welcome to CarWorld!';
     </script>
-} 
+}

@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">CarWorld</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CarWorld</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,11 +59,12 @@
     <footer class="border-top footer text-muted" style="height:5px">
         <div class="container">
             <div class="row">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-user-secret"></i> Privacy</a>
                 @if (this.User.IsInRole("Admin"))
                 {
                     <a class="nav-link text-dark" asp-area="Administration" asp-controller="AdministrationRoles" asp-action="ListRoles"><i class="fas fa-users-cog"></i> Administration Roles</a>
+                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="AdministrationCars" asp-action="Index"><i class="fas fa-car-crash"></i> Administration Cars</a>
                 }
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-user-secret"></i> Privacy</a>
             </div>
         </div>
     </footer>

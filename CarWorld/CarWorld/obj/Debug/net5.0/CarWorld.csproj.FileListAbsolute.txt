@@ -852,3 +852,8 @@ D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administ
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\_Layout.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationCars\Create.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationCars\Delete.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationCars\Details.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationCars\Edit.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Areas\Administration\Views\AdministrationCars\Index.cshtml.g.cs
