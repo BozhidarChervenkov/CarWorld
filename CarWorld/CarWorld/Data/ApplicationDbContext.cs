@@ -26,6 +26,12 @@
 
         public DbSet<Vote> Votes { get; set; }
 
+        public DbSet<Show> Shows { get; set; }
+
+        public DbSet<ShowPicture> ShowPictures { get; set; }
+
+        public DbSet<Video> Videos { get; set; }
+
         public DbSet<MainComment> MainComments { get; set; }
 
         public DbSet<SubComment> SubComments { get; set; }
@@ -38,6 +44,11 @@
                 .HasOne(p => p.Car)
                 .WithMany(c=>c.Pictures)
                 .HasForeignKey(p => p.CarId);
+
+            builder.Entity<Video>()
+                .HasOne(v => v.Show)
+                .WithMany(s => s.Videos)
+                .HasForeignKey(v => v.ShowId);
 
             builder.Entity<Vote>()
                 .HasOne(v => v.Car)

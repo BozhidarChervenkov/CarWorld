@@ -47,7 +47,7 @@
 
         <div class="m-3" id="CarPicturesContainer">
             <label asp-for="Pictures"></label>
-            <a class="btn btn-success" onclick="AddMoreUrls()">+</a>
+            <a class="btn btn-success" onclick="AddMoreUrls()"><i class="fas fa-plus"></i></a>
         </div>
 
         <div class="text-center">
@@ -64,7 +64,7 @@
 
         function AddMoreUrls()
         {
-            $("#CarPicturesContainer").append("<div class='form-control'>Url:<input type='text' name='Pictures["+ urlIndex +"].Url' id='' /></div>");
+            $("#CarPicturesContainer").append("<div class='mt-2'>Url:<input type='text' name='Pictures["+ urlIndex +"].Url' id='' /></div>");
             urlIndex++;
         }
     </script>

@@ -1,0 +1,62 @@
+﻿@model AddShowInputModel
+
+@{
+    ViewData["Title"] = "Add new show";
+}
+
+<h1 class="text-center mb-3">@ViewData["Title"]:</h1>
+
+<form asp-controller="CarShows" asp-action="Add" method="post" class="col-md-8 offset-2">
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input type="text" asp-for="Title" class="form-control" placeholder="Make" />
+        <span asp-validation-for="Title" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea rows="5" asp-for="Description" class="form-control " placeholder="Add your description here..."></textarea>
+        <span asp-validation-for="Description" class="text-danger" />
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="m-3" id="ShowPicturesContainer">
+            <i class="fas fa-images"></i>
+            <label asp-for="ShowPictures"></label>
+            <a class="btn btn-success mr-5" onclick="AddMorePictureUrls()"><i class="fas fa-plus"></i></a>
+        </div>
+
+        <div class="m-3" id="ShowVideosContainer">
+            <i class="fas fa-video"></i>
+            <label asp-for="Videos"></label>
+            <a class="btn btn-success" onclick="AddMoreVideoUrls()"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <button type="submit" formmethod="post" class="btn-success btn-lg">Add</button>
+    </div>
+
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        var urlPictureIndex = 0;
+
+        function AddMorePictureUrls() {
+            $("#ShowPicturesContainer").append("<div class='mt-1 mb-1'>Url:<input type='text' name='ShowPictures[" + urlPictureIndex + "].Url' id='' /></div>");
+            urlPictureIndex++;
+        }
+
+        var urlVideoIndex = 0;
+
+        function AddMoreVideoUrls() {
+            $("#ShowVideosContainer").append("<div class='mt-1 mb-1'>Url:<input type='text' name='Videos[" + urlVideoIndex + "].UrlPath' id='' /></div>");
+            urlVideoIndex++;
+        }
+    </script>
+}
+

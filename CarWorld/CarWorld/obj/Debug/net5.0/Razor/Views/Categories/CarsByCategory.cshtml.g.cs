@@ -49,27 +49,34 @@ using CarWorld.ViewModels.HomePageViewModels;
 #nullable disable
 #nullable restore
 #line 6 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
-using CarWorld.ViewModels.CreateCarViewModels;
+using CarWorld.ViewModels.CarShowsViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
-using CarWorld.ViewModels.SearchCarViewModels;
+using CarWorld.ViewModels.CreateCarViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
+using CarWorld.ViewModels.SearchCarViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\_ViewImports.cshtml"
 using CarWorld.ViewModels.CategoriesViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c31aa4207bb676a80a7000d4dcf5fcf1991cffe7", @"/Views/Categories/CarsByCategory.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efa60a835215e6492d7f6185671f25ab4f618927", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c6a8757b38d52904ef507625fda7c7c681ee78c5", @"/Views/_ViewImports.cshtml")]
     public class Views_Categories_CarsByCategory : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarsListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Cars", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -138,7 +145,7 @@ WriteAttributeValue("", 327, car.PictureUrl, 327, 15, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" width=\"170\" height=\"105\" alt=\"Generic placeholder image\">\r\n            <div class=\"media-body\">\r\n                <h5 class=\"mt-0\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c31aa4207bb676a80a7000d4dcf5fcf1991cffe76734", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c31aa4207bb676a80a7000d4dcf5fcf1991cffe76930", async() => {
 #nullable restore
 #line 18 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Views\Categories\CarsByCategory.cshtml"
                                                                                                     Write(car.MakeName);
@@ -201,7 +208,7 @@ WriteAttributeValue("", 327, car.PictureUrl, 327, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</div>\r\n\r\n<hr>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c31aa4207bb676a80a7000d4dcf5fcf1991cffe710242", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c31aa4207bb676a80a7000d4dcf5fcf1991cffe710438", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

@@ -195,6 +195,29 @@ namespace CarWorld.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Shows",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Shows", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Shows_AspNetUsers_AddedByUserId",
+                        column: x => x.AddedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Cars",
                 columns: table => new
                 {
@@ -206,7 +229,7 @@ namespace CarWorld.Migrations
                     BodyTypeId = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -235,6 +258,46 @@ namespace CarWorld.Migrations
                         name: "FK_Cars_Models_ModelId",
                         column: x => x.ModelId,
                         principalTable: "Models",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ShowPictures",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    ShowId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ShowPictures", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ShowPictures_Shows_ShowId",
+                        column: x => x.ShowId,
+                        principalTable: "Shows",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Videos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UrlPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ShowId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Videos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Videos_Shows_ShowId",
+                        column: x => x.ShowId,
+                        principalTable: "Shows",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -416,6 +479,16 @@ namespace CarWorld.Migrations
                 column: "CarId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ShowPictures_ShowId",
+                table: "ShowPictures",
+                column: "ShowId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shows_AddedByUserId",
+                table: "Shows",
+                column: "AddedByUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SubComments_AddedByUserId",
                 table: "SubComments",
                 column: "AddedByUserId");
@@ -424,6 +497,11 @@ namespace CarWorld.Migrations
                 name: "IX_SubComments_MainCommentId",
                 table: "SubComments",
                 column: "MainCommentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Videos_ShowId",
+                table: "Videos",
+                column: "ShowId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Votes_CarId",
@@ -457,7 +535,13 @@ namespace CarWorld.Migrations
                 name: "Pictures");
 
             migrationBuilder.DropTable(
+                name: "ShowPictures");
+
+            migrationBuilder.DropTable(
                 name: "SubComments");
+
+            migrationBuilder.DropTable(
+                name: "Videos");
 
             migrationBuilder.DropTable(
                 name: "Votes");
@@ -467,6 +551,9 @@ namespace CarWorld.Migrations
 
             migrationBuilder.DropTable(
                 name: "MainComments");
+
+            migrationBuilder.DropTable(
+                name: "Shows");
 
             migrationBuilder.DropTable(
                 name: "Cars");

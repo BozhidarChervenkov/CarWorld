@@ -1,0 +1,27 @@
+﻿@model ShowByIdViewModel
+
+@{
+    ViewData["Title"] = $"{Model.Title}";
+}
+
+<h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+<p>@Model.Description</p>
+
+<hr>
+<div class="row mt-4">
+    @for (int i = 0; i < ViewBag.EmbeddedVideoCodes.Count; i++)
+    {
+        string path = "https://www.youtube.com/embed/" + ViewBag.EmbeddedVideoCodes[i];
+
+        <div class="col">
+            <iframe width="540" height="315"
+                    src="@path"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    }
+</div>
+<hr>
