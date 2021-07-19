@@ -9,6 +9,7 @@
 <p>@Model.Description</p>
 
 <hr>
+<h2 class="mt-3">Videos:</h2>
 <div class="row mt-4">
     @for (int i = 0; i < ViewBag.EmbeddedVideoCodes.Count; i++)
     {
@@ -21,6 +22,15 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
             </iframe>
+        </div>
+    }
+</div>
+<h2 class="mt-3">Pictures:</h2>
+<div class="row mt-4">
+    @foreach (var picture in Model.ShowPictures)
+    {
+        <div class="col">
+            <img class="center-block img-responsive rounded" width="540" height="315" src="@picture.Url.ToString()">
         </div>
     }
 </div>
