@@ -9,6 +9,8 @@
         [Key]
         public int Id { get; set; }
 
+        public int CarId { get; set; }
+
         [Required]
         [MinLength(ModelNameMinLenght)]
         [MaxLength(ModelNameMaxLenght)]

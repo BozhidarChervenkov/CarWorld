@@ -99,8 +99,8 @@ namespace CarWorld.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("PictureUrl")
                         .HasColumnType("nvarchar(max)");
@@ -129,8 +129,8 @@ namespace CarWorld.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasMaxLength(600)
+                        .HasColumnType("nvarchar(600)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -138,7 +138,13 @@ namespace CarWorld.Migrations
                     b.Property<int>("MakeId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MakeId1")
+                        .HasColumnType("int");
+
                     b.Property<int>("ModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ModelId1")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -153,9 +159,9 @@ namespace CarWorld.Migrations
 
                     b.HasIndex("BodyTypeId");
 
-                    b.HasIndex("MakeId");
+                    b.HasIndex("MakeId1");
 
-                    b.HasIndex("ModelId");
+                    b.HasIndex("ModelId1");
 
                     b.ToTable("Cars");
                 });
@@ -195,6 +201,9 @@ namespace CarWorld.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -212,10 +221,13 @@ namespace CarWorld.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
@@ -523,15 +535,11 @@ namespace CarWorld.Migrations
 
                     b.HasOne("CarWorld.Models.Make", "Make")
                         .WithMany()
-                        .HasForeignKey("MakeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MakeId1");
 
                     b.HasOne("CarWorld.Models.Model", "Model")
                         .WithMany()
-                        .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ModelId1");
 
                     b.Navigation("AddedByUser");
 

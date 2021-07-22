@@ -85,6 +85,14 @@ namespace CarWorld
 
             app.UseAuthentication();
             app.UseAuthorization();
+            
+            // Db seeding data logic
+            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+                context.Database.Migrate();
+                context.EnsureDatabaseSeeded();
+            }
 
             app.UseEndpoints(endpoints =>
             {
@@ -98,7 +106,7 @@ namespace CarWorld
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Categories}/{action=CarsByCategory}/{bodyTypeId?}/{pageId?}");
-                endpoints.MapRazorPages();       
+                endpoints.MapRazorPages();
             });
         }
     }

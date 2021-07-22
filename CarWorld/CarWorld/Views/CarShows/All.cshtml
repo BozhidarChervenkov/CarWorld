@@ -6,7 +6,7 @@
 
 @if (this.User.IsInRole("Admin"))
 {
-    <div class="text-center mt-3 mb-3"> 
+    <div class="text-center mt-3 mb-3">
         <a asp-controller="CarShows" asp-action="Add" class="btn-lg btn-success">Add show</a>
     </div>
 }
@@ -18,14 +18,17 @@
 {
     <ul class="list-unstyled">
         <li class="media">
-            <img src="@show.Picture" class="mr-3" width="260" height="150" >
+            <img src="@show.Picture" class="mr-3" width="260" height="150">
             <div class="media-body">
                 <h5 class="mt-0 mb-1"><a asp-controller="CarShows" asp-action="ShowById" asp-route-id="@show.Id">@show.Title</a></h5>
                 <p>@show.Description</p>
                 <div class="row justify-content-end">
 
                     <p class="mr-2">Created on:</p>@show.CreatedOn
-                    <a asp-controller="CarShows" asp-action="DeleteShow" asp-route-id="@show.Id" class="btn btn-primary ml-3">Delete Show</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="CarShows" asp-action="DeleteShow" asp-route-id="@show.Id" class="btn btn-primary ml-3 ">Delete Show</a>
+                    }
                 </div>
             </div>
         </li>

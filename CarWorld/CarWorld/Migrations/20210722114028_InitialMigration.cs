@@ -54,7 +54,7 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     PictureUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -68,6 +68,7 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CarId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
@@ -81,7 +82,8 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                    CarId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -225,11 +227,13 @@ namespace CarWorld.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     MakeId = table.Column<int>(type: "int", nullable: false),
+                    MakeId1 = table.Column<int>(type: "int", nullable: true),
                     ModelId = table.Column<int>(type: "int", nullable: false),
+                    ModelId1 = table.Column<int>(type: "int", nullable: true),
                     BodyTypeId = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(600)", maxLength: 600, nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -249,17 +253,17 @@ namespace CarWorld.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Cars_Makes_MakeId",
-                        column: x => x.MakeId,
+                        name: "FK_Cars_Makes_MakeId1",
+                        column: x => x.MakeId1,
                         principalTable: "Makes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Cars_Models_ModelId",
-                        column: x => x.ModelId,
+                        name: "FK_Cars_Models_ModelId1",
+                        column: x => x.ModelId1,
                         principalTable: "Models",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -454,14 +458,14 @@ namespace CarWorld.Migrations
                 column: "BodyTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cars_MakeId",
+                name: "IX_Cars_MakeId1",
                 table: "Cars",
-                column: "MakeId");
+                column: "MakeId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cars_ModelId",
+                name: "IX_Cars_ModelId1",
                 table: "Cars",
-                column: "ModelId");
+                column: "ModelId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MainComments_AddedByUserId",
