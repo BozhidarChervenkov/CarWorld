@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace CarWorld.Migrations
+﻿namespace CarWorld.Migrations
 {
+    using System;
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -225,7 +225,7 @@ namespace CarWorld.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     MakeId = table.Column<int>(type: "int", nullable: false),
                     MakeId1 = table.Column<int>(type: "int", nullable: true),
                     ModelId = table.Column<int>(type: "int", nullable: false),
@@ -245,7 +245,7 @@ namespace CarWorld.Migrations
                         column: x => x.AddedByUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Cars_BodyTypes_BodyTypeId",
                         column: x => x.BodyTypeId,

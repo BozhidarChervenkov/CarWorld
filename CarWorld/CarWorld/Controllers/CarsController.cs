@@ -52,8 +52,7 @@
             return this.View(viewModel);
         }
 
-        //Todo: Find a way to let users delete their own cars! 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> DeleteCar(int id)
         {

@@ -17,8 +17,7 @@
             this.context = context;
         }
 
-        // TODO: Make method asynchronous
-        public void CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId)
+        public int CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId)
         {
             var car = new Car()
             {
@@ -35,6 +34,8 @@
 
             this.context.Cars.Add(car);
             this.context.SaveChanges();
+
+            return car.Id;
         }
 
         public SelectList BodyTypesSelectList()

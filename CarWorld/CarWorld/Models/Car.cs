@@ -19,7 +19,6 @@
         [Key]
         public int Id { get; set; }
 
-        [Required]
         public string AddedByUserId { get; set; }
 
         public ApplicationUser AddedByUser { get; set; }

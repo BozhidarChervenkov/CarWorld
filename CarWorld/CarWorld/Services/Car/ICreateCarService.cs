@@ -6,7 +6,7 @@
 
     public interface ICreateCarService
     {
-        void CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId);
+        int CreateCarAndAddToDb(CreateCarInputModel inputModel, string userId);
 
         SelectList BodyTypesSelectList();
     } 

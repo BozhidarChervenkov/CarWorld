@@ -40,5 +40,9 @@
 
         public const int ShowDescriptionMinLenght = 10;
         public const int ShowDescriptionMaxLenght = 600;
+
+        // Web constants:
+
+        public const string AdministratorRoleName = "Admin";
     }
 }

@@ -67,6 +67,9 @@ namespace CarWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Seeding data into db
+            app.PrepareDatabase();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -85,14 +88,6 @@ namespace CarWorld
 
             app.UseAuthentication();
             app.UseAuthorization();
-            
-            // Db seeding data logic
-            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
-                context.Database.Migrate();
-                context.EnsureDatabaseSeeded();
-            }
 
             app.UseEndpoints(endpoints =>
             {

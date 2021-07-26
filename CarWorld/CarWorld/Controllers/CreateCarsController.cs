@@ -39,9 +39,9 @@
 
             var userId = this.userManager.GetUserId(this.User);
 
-            this.carsService.CreateCarAndAddToDb(inputModel, userId);
+            var carId = this.carsService.CreateCarAndAddToDb(inputModel, userId);
 
-            return this.Redirect("~/Home/Index");
+            return this.RedirectToAction("CarById", "Cars", new { id = carId });
         }
     }
 }

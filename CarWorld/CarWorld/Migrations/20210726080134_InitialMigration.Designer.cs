@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorld.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210722114028_InitialMigration")]
+    [Migration("20210726080134_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,7 +120,6 @@ namespace CarWorld.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AddedByUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BodyTypeId")
@@ -525,9 +524,7 @@ namespace CarWorld.Migrations
                 {
                     b.HasOne("CarWorld.Models.ApplicationUser", "AddedByUser")
                         .WithMany()
-                        .HasForeignKey("AddedByUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddedByUserId");
 
                     b.HasOne("CarWorld.Models.BodyType", "BodyType")
                         .WithMany()

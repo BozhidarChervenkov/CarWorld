@@ -118,7 +118,6 @@ namespace CarWorld.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AddedByUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BodyTypeId")
@@ -523,9 +522,7 @@ namespace CarWorld.Migrations
                 {
                     b.HasOne("CarWorld.Models.ApplicationUser", "AddedByUser")
                         .WithMany()
-                        .HasForeignKey("AddedByUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddedByUserId");
 
                     b.HasOne("CarWorld.Models.BodyType", "BodyType")
                         .WithMany()
