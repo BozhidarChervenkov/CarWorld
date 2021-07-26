@@ -27,7 +27,7 @@
 
             SeedAdministrator(services);
             SeedContextData(services);
-            
+
             return app;
         }
 
@@ -70,7 +70,7 @@
                     BodyTypeId = 1,
                     Year = 2020,
                     Price = 53900,
-                    AddedByUserId= AdminId,
+                    AddedByUserId = AdminId,
                     Description = "The BMW 5 Series is an executive car manufactured by BMW since 1972. It is the successor to the New Class Sedans and is currently in its seventh generation. ... Since 1982, diesel engines have been included in the 5 Series range. The 5 Series is BMW's second best-selling model after the 3 Series.",
                     Pictures = new HashSet<Picture>(){
                         new Picture {Url = "https://static.jutarnji.hr/images/live-multimedia/binary/2016/10/13/11/2017-BMW-5-Series-47.jpg" },
@@ -138,7 +138,7 @@
                 {
                     Make = new() { Name = "Porshe" },
                     Model = new() { Name = "turbo s" },
-                    BodyTypeId = 2,
+                    BodyTypeId = 8,
                     Year = 2021,
                     Price = 67000,
                     AddedByUserId = AdminId,
@@ -152,7 +152,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "Cls" },
-                    BodyTypeId = 2,
+                    BodyTypeId = 8,
                     Year = 2008,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -166,7 +166,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "6 series" },
-                    BodyTypeId = 2,
+                    BodyTypeId = 8,
                     Year = 2016,
                     Price = 30000,
                     AddedByUserId = AdminId,
@@ -180,7 +180,7 @@
                 {
                     Make = new() { Name = "Ford" },
                     Model = new() { Name = "Mustang" },
-                    BodyTypeId = 2,
+                    BodyTypeId = 8,
                     Year = 2021,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -194,7 +194,7 @@
                 {
                     Make = new() { Name = "Dodge" },
                     Model = new() { Name = "Challenger" },
-                    BodyTypeId = 2,
+                    BodyTypeId = 8,
                     Year = 2021,
                     Price = 500000,
                     AddedByUserId = AdminId,
@@ -209,7 +209,7 @@
                 {
                     Make = new() { Name = "Mclaren" },
                     Model = new() { Name = "p1" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2013,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -223,7 +223,7 @@
                 {
                     Make = new() { Name = "Ferrari" },
                     Model = new() { Name = "Enzo" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2002,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -237,7 +237,7 @@
                 {
                     Make = new() { Name = "Buggati" },
                     Model = new() { Name = "Chiron" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2016,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -251,7 +251,7 @@
                 {
                     Make = new() { Name = "Lamborghini" },
                     Model = new() { Name = "Veneno" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2013,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -265,7 +265,7 @@
                 {
                     Make = new() { Name = "Aston Martin" },
                     Model = new() { Name = "Vulcan" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2015,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -280,7 +280,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "E-Class Wagon" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2020,
                     Price = 19000,
                     AddedByUserId = AdminId,
@@ -294,7 +294,7 @@
                 {
                     Make = new() { Name = "Volvo" },
                     Model = new() { Name = "V60" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2010,
                     Price = 21000,
                     AddedByUserId = AdminId,
@@ -308,7 +308,7 @@
                 {
                     Make = new() { Name = "Audi" },
                     Model = new() { Name = "A4 Allroad" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2013,
                     Price = 15000,
                     AddedByUserId = AdminId,
@@ -322,7 +322,7 @@
                 {
                     Make = new() { Name = "Porsche Panamera" },
                     Model = new() { Name = "Sport Turismo" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2021,
                     Price = 30000,
                     AddedByUserId = AdminId,
@@ -336,7 +336,7 @@
                 {
                     Make = new() { Name = "Buick" },
                     Model = new() { Name = "Regal TourX" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2018,
                     Price = 18000,
                     AddedByUserId = AdminId,
@@ -351,7 +351,7 @@
                 {
                     Make = new() { Name = "Volkswagen" },
                     Model = new() { Name = "Golf 8" },
-                    BodyTypeId = 5,
+                    BodyTypeId = 9,
                     Year = 2019,
                     Price = 15000,
                     AddedByUserId = AdminId,
@@ -365,7 +365,7 @@
                 {
                     Make = new() { Name = "Honda" },
                     Model = new() { Name = "Civic Type R" },
-                    BodyTypeId = 5,
+                    BodyTypeId = 9,
                     Year = 2021,
                     Price = 16000,
                     AddedByUserId = AdminId,
@@ -379,7 +379,7 @@
                 {
                     Make = new() { Name = "Toyota" },
                     Model = new() { Name = "Yaris SE" },
-                    BodyTypeId = 5,
+                    BodyTypeId = 9,
                     Year = 2021,
                     Price = 12000,
                     AddedByUserId = AdminId,
@@ -393,7 +393,7 @@
                 {
                     Make = new() { Name = "Subaru" },
                     Model = new() { Name = "Impreza 5-Door" },
-                    BodyTypeId = 5,
+                    BodyTypeId = 9,
                     Year = 2021,
                     Price = 19500,
                     AddedByUserId = AdminId,
@@ -407,7 +407,7 @@
                 {
                     Make = new() { Name = "Mazda" },
                     Model = new() { Name = "3 5-Door" },
-                    BodyTypeId = 5,
+                    BodyTypeId = 9,
                     Year = 2018,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -422,7 +422,7 @@
                 {
                     Make = new() { Name = "Porsche" },
                     Model = new() { Name = "718 Boxster" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2021,
                     Price = 34000,
                     AddedByUserId = AdminId,
@@ -436,7 +436,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "Z4" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2020,
                     Price = 32000,
                     AddedByUserId = AdminId,
@@ -450,7 +450,7 @@
                 {
                     Make = new() { Name = "Chevy" },
                     Model = new() { Name = "Camaro ZL1" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2021,
                     Price = 35000,
                     AddedByUserId = AdminId,
@@ -464,7 +464,7 @@
                 {
                     Make = new() { Name = "Porsche" },
                     Model = new() { Name = "911" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2019,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -478,7 +478,7 @@
                 {
                     Make = new() { Name = "Mazda" },
                     Model = new() { Name = "MX-5 Miata" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2021,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -493,7 +493,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "Gl" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2021,
                     Price = 14000,
                     AddedByUserId = AdminId,
@@ -507,7 +507,7 @@
                 {
                     Make = new() { Name = "Toyota" },
                     Model = new() { Name = "Rav 4" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2021,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -521,7 +521,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "X5" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2021,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -535,7 +535,7 @@
                 {
                     Make = new() { Name = "Honda" },
                     Model = new() { Name = "CRV" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2021,
                     Price = 35000,
                     AddedByUserId = AdminId,
@@ -549,7 +549,7 @@
                 {
                     Make = new() { Name = "Range Rover" },
                     Model = new() { Name = "Velar" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2021,
                     Price = 23000,
                     AddedByUserId = AdminId,
@@ -605,7 +605,7 @@
                         new ShowPicture{Url ="https://external-preview.redd.it/BMNFQBe-Cfv5Kb1fGfZEFjvKj_0dZliLlHzCaqRmnDQ.jpg?auto=webp&s=fcdebb945b4523915b0a4aa72f5f3cbe37768ea7"},
                         new ShowPicture{Url ="https://www.legendarylist.com/wp-content/uploads/2015/05/watch-roadkill-guys-do-an-offroad-using-a-lowrider-monte-carlo.jpg"},
                     },
-                    Videos= new HashSet<Video>()
+                    Videos = new HashSet<Video>()
                     {
                         new Video{UrlPath ="https://www.youtube.com/watch?v=0JXDcJQqZrA&ab_channel=MotorTrendChannel"},
                         new Video{UrlPath ="https://www.youtube.com/watch?v=PVs_xZ46Cxw&t=1200s&ab_channel=MotorTrendChannel"},
@@ -669,7 +669,7 @@
                         Email = adminEmail,
                         UserName = adminEmail,
                         FirstName = "Admin",
-                        LastName="Admin"
+                        LastName = "Admin"
                     };
 
                     await userManager.CreateAsync(user, adminPassword);
