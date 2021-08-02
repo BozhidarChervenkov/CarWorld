@@ -2,8 +2,8 @@
 {
     using CarWorld.ViewModels.HomePageViewModels;
 
-    public interface ILatestCarsService
+    public interface IUserMessagesService
     {
-        IndexViewModel CollectData();
+        void Save(IndexViewModel model);
     }
 }

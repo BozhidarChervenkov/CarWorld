@@ -16,7 +16,7 @@
             this.context = context;
         }
 
-        public LatestCars CollectData()
+        public IndexViewModel CollectData()
         {
             // Selection of a list of entities with specific columns from database
             var cars = this.context.Cars
@@ -34,7 +34,7 @@
                                       .ToList();
 
             // Giving the collection of CarViewModel to main view model for Home page
-            var viewModel = new LatestCars();
+            var viewModel = new IndexViewModel();
             viewModel.Cars = cars;
 
             return viewModel;

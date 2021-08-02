@@ -61,6 +61,7 @@ namespace CarWorld
             services.AddTransient<ICarShowsService, CarShowsService>();
             services.AddTransient<ISearchService, SearchService>();
             services.AddTransient<IVotesService, VotesService>();
+            services.AddTransient<IUserMessagesService, UserMessagesService>();
 
         }
 
