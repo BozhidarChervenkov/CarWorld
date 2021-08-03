@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWorld.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210803111216_AddIsDeletedColumnToUserMessageModel")]
-    partial class AddIsDeletedColumnToUserMessageModel
+    [Migration("20210803124922_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

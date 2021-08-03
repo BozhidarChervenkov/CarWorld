@@ -21,16 +21,21 @@
             <tr class="text-center">
                 <td class="col-3">@message.UserName</td>
                 <td class="col-5">@message.MessageContent</td>
-                <td class="col-3">@message.SentAtDate 
+                <td class="col-3">
+                    @message.SentAtDate
                 <a asp-area="Administration" asp-controller="AdministrationMessages" asp-action="Delete" asp-route-id="@message.MessageId" class="btn btn-primary btn-sm ml-2">Delete message</a>
-                </td>
-            </tr>
-        }
+            </td>
+        </tr>
+    }
     </table>
 }
 else
 {
-    <h3 class="text-center text-danger mt-5 mb-5">No new messages yet!</h3>
+    <h3 class="text-center text-danger mt-5 mb-3">No new messages yet!</h3>
+
+    <div class="text-center">
+        <img src="~/Images/SmileyFace.jpg" alt="Smiley face" style="width:430px; height:350px;" />
+    </div>
 }
 
 <hr>

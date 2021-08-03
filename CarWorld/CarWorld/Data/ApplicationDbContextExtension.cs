@@ -138,7 +138,7 @@
                 {
                     Make = new() { Name = "Porshe" },
                     Model = new() { Name = "turbo s" },
-                    BodyTypeId = 8,
+                    BodyTypeId = 2,
                     Year = 2021,
                     Price = 67000,
                     AddedByUserId = AdminId,
@@ -152,7 +152,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "Cls" },
-                    BodyTypeId = 8,
+                    BodyTypeId = 2,
                     Year = 2008,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -166,7 +166,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "6 series" },
-                    BodyTypeId = 8,
+                    BodyTypeId = 2,
                     Year = 2016,
                     Price = 30000,
                     AddedByUserId = AdminId,
@@ -180,7 +180,7 @@
                 {
                     Make = new() { Name = "Ford" },
                     Model = new() { Name = "Mustang" },
-                    BodyTypeId = 8,
+                    BodyTypeId = 2,
                     Year = 2021,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -194,7 +194,7 @@
                 {
                     Make = new() { Name = "Dodge" },
                     Model = new() { Name = "Challenger" },
-                    BodyTypeId = 8,
+                    BodyTypeId = 2,
                     Year = 2021,
                     Price = 500000,
                     AddedByUserId = AdminId,
@@ -209,7 +209,7 @@
                 {
                     Make = new() { Name = "Mclaren" },
                     Model = new() { Name = "p1" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2013,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -223,7 +223,7 @@
                 {
                     Make = new() { Name = "Ferrari" },
                     Model = new() { Name = "Enzo" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2002,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -237,7 +237,7 @@
                 {
                     Make = new() { Name = "Buggati" },
                     Model = new() { Name = "Chiron" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2016,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -251,7 +251,7 @@
                 {
                     Make = new() { Name = "Lamborghini" },
                     Model = new() { Name = "Veneno" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2013,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -265,7 +265,7 @@
                 {
                     Make = new() { Name = "Aston Martin" },
                     Model = new() { Name = "Vulcan" },
-                    BodyTypeId = 7,
+                    BodyTypeId = 3,
                     Year = 2015,
                     Price = 25000,
                     AddedByUserId = AdminId,
@@ -280,7 +280,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "E-Class Wagon" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2020,
                     Price = 19000,
                     AddedByUserId = AdminId,
@@ -294,7 +294,7 @@
                 {
                     Make = new() { Name = "Volvo" },
                     Model = new() { Name = "V60" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2010,
                     Price = 21000,
                     AddedByUserId = AdminId,
@@ -308,7 +308,7 @@
                 {
                     Make = new() { Name = "Audi" },
                     Model = new() { Name = "A4 Allroad" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2013,
                     Price = 15000,
                     AddedByUserId = AdminId,
@@ -322,7 +322,7 @@
                 {
                     Make = new() { Name = "Porsche Panamera" },
                     Model = new() { Name = "Sport Turismo" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2021,
                     Price = 30000,
                     AddedByUserId = AdminId,
@@ -336,7 +336,7 @@
                 {
                     Make = new() { Name = "Buick" },
                     Model = new() { Name = "Regal TourX" },
-                    BodyTypeId = 6,
+                    BodyTypeId = 4,
                     Year = 2018,
                     Price = 18000,
                     AddedByUserId = AdminId,
@@ -351,7 +351,7 @@
                 {
                     Make = new() { Name = "Volkswagen" },
                     Model = new() { Name = "Golf 8" },
-                    BodyTypeId = 9,
+                    BodyTypeId = 5,
                     Year = 2019,
                     Price = 15000,
                     AddedByUserId = AdminId,
@@ -365,7 +365,7 @@
                 {
                     Make = new() { Name = "Honda" },
                     Model = new() { Name = "Civic Type R" },
-                    BodyTypeId = 9,
+                    BodyTypeId = 5,
                     Year = 2021,
                     Price = 16000,
                     AddedByUserId = AdminId,
@@ -379,7 +379,7 @@
                 {
                     Make = new() { Name = "Toyota" },
                     Model = new() { Name = "Yaris SE" },
-                    BodyTypeId = 9,
+                    BodyTypeId = 5,
                     Year = 2021,
                     Price = 12000,
                     AddedByUserId = AdminId,
@@ -393,7 +393,7 @@
                 {
                     Make = new() { Name = "Subaru" },
                     Model = new() { Name = "Impreza 5-Door" },
-                    BodyTypeId = 9,
+                    BodyTypeId = 5,
                     Year = 2021,
                     Price = 19500,
                     AddedByUserId = AdminId,
@@ -407,7 +407,7 @@
                 {
                     Make = new() { Name = "Mazda" },
                     Model = new() { Name = "3 5-Door" },
-                    BodyTypeId = 9,
+                    BodyTypeId = 5,
                     Year = 2018,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -417,12 +417,83 @@
                         new Picture {Url = "https://media.ed.edmunds-media.com/mazda/3/2018/oem/2018_mazda_3_4dr-hatchback_grand-touring_fq_oem_8_500.jpg" },
                     }
                 },
+                // 5 Muscle cars
+                new Car
+                {
+                    Make = new() { Name = "Dodge" },
+                    Model = new() { Name = "Charger" },
+                    BodyTypeId = 9,
+                    Year = 1969,
+                    Price = 56000,
+                    AddedByUserId = AdminId,
+                    Description = "The 1969 Dodge Charger was an update of the completely restyled '68 model, which meant it was built on a 117-inch wheelbase with Chrysler's familiar torsion-bar suspension up front and leaf springs in the back.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://www.hushhush.com/wp-content/uploads/2019/01/1969-dodge-charger.jpg" },
+                        new Picture {Url = "https://cdn.motor1.com/images/mgl/ME0Pw/s1/ringbrothers-defector-1969-dodge-charger.jpg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Ford" },
+                    Model = new() { Name = "Mustang" },
+                    BodyTypeId = 9,
+                    Year = 1969,
+                    Price = 55000,
+                    AddedByUserId = AdminId,
+                    Description = "The 1969 Limited Edition Mustang E was a rare (about 50 produced) fastback special model designed for economy. It came with a six-cylinder engine (250 cu in (4.1 L)), a high stall torque converter for the standard automatic transmission and a very low, 2.33:1 rear axle ratio.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://bringatrailer.com/wp-content/uploads/2021/02/1969_ford_mustang_boss_302_16146099772a7ce40810bf521969_ford_mustang_boss_302_1613527360565ef66e7dff9f985a1aefc8-0977-4deb-8f7c-03462911be4b-vvESal.jpg?fit=940%2C627" },
+                        new Picture {Url = "https://media.evo.co.uk/image/upload/v1581606140/evo/2020/02/Ford%20Mustang%20Mach%201-4.jpg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Dodge" },
+                    Model = new() { Name = "Super Bee" },
+                    BodyTypeId = 9,
+                    Year = 1970,
+                    Price = 43000,
+                    AddedByUserId = AdminId,
+                    Description = "The Dodge Super Bee is a mid-sized muscle car marketed by Dodge, that was produced for the 1968 through 1971 model years. ... The Super Bee model name was resurrected for the 2007, 2008, 2009, 2012, and 2013 Dodge Charger Super Bee models.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://www.americancarcollector.com/wp-content/uploads/2017/04/1970-dodge-super-bee-front.jpg" },
+                        new Picture {Url = "https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2020/10/Super-Bee.jpg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Chevrolet" },
+                    Model = new() { Name = "Camaro  Z/28" },
+                    BodyTypeId = 9,
+                    Year = 1967,
+                    Price = 34000,
+                    AddedByUserId = AdminId,
+                    Description = "The Z/28 option required power front disc brakes and a close-ratio Muncie 4-speed manual transmission (posi-traction was optional). It featured a 302 cu in (4.9 L) small-block V-8 engine, 3 crankshaft with 4 bore, an aluminum intake manifold, and a 4-barrel vacuum secondary Holley carburetor of 780 cfm.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://www.americanmusclecarmuseum.com/files/cars/1967-chevrolet-camaro-z28_9833.jpg" },
+                        new Picture {Url = "https://cdn1.mecum.com/auctions/ch1016/ch1016-272520/images/ch1016-272520_1@2x.jpg?1474291681000" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Chevrolet" },
+                    Model = new() { Name = "Corvette L88" },
+                    BodyTypeId = 9,
+                    Year = 1968,
+                    Price = 33000,
+                    AddedByUserId = AdminId,
+                    Description = "Duntov was the first to motivate Chevrolet to install a manual transmission and larger engine into the Corvette, turning the 1956 version into a genuine sports car.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://lh3.googleusercontent.com/proxy/1XPMsnrb5bhz1sCdrIep91DzlVcwOj_7WX914WUfTqictNp-9tKW4HjotX-YxJS0WJJGI_HuAQoJN4GqYeUgDzUyl_76hbmAZQ3N-U7VnruWWs5JTz1eOUpkw-lrtog-OsEP8N2sCe9O2FIPRIyW5vwU4lCwP9ZFL2C2me9UvUv-r8I3l2zp" },
+                        new Picture {Url = "https://s1.cdn.autoevolution.com/images/news/gallery/ultra-rare-1968-chevrolet-corvette-l88-owned-by-james-garner-up-for-sale_9.jpg" },
+                    }
+                },
                 // 5 convertibles
                 new Car
                 {
                     Make = new() { Name = "Porsche" },
                     Model = new() { Name = "718 Boxster" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2021,
                     Price = 34000,
                     AddedByUserId = AdminId,
@@ -436,7 +507,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "Z4" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2020,
                     Price = 32000,
                     AddedByUserId = AdminId,
@@ -450,7 +521,7 @@
                 {
                     Make = new() { Name = "Chevy" },
                     Model = new() { Name = "Camaro ZL1" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2021,
                     Price = 35000,
                     AddedByUserId = AdminId,
@@ -464,7 +535,7 @@
                 {
                     Make = new() { Name = "Porsche" },
                     Model = new() { Name = "911" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2019,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -478,7 +549,7 @@
                 {
                     Make = new() { Name = "Mazda" },
                     Model = new() { Name = "MX-5 Miata" },
-                    BodyTypeId = 4,
+                    BodyTypeId = 6,
                     Year = 2021,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -493,7 +564,7 @@
                 {
                     Make = new() { Name = "Mercedes" },
                     Model = new() { Name = "Gl" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2021,
                     Price = 14000,
                     AddedByUserId = AdminId,
@@ -507,7 +578,7 @@
                 {
                     Make = new() { Name = "Toyota" },
                     Model = new() { Name = "Rav 4" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2021,
                     Price = 13000,
                     AddedByUserId = AdminId,
@@ -521,7 +592,7 @@
                 {
                     Make = new() { Name = "BMW" },
                     Model = new() { Name = "X5" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2021,
                     Price = 45000,
                     AddedByUserId = AdminId,
@@ -535,7 +606,7 @@
                 {
                     Make = new() { Name = "Honda" },
                     Model = new() { Name = "CRV" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2021,
                     Price = 35000,
                     AddedByUserId = AdminId,
@@ -549,7 +620,7 @@
                 {
                     Make = new() { Name = "Range Rover" },
                     Model = new() { Name = "Velar" },
-                    BodyTypeId = 3,
+                    BodyTypeId = 7,
                     Year = 2021,
                     Price = 23000,
                     AddedByUserId = AdminId,
@@ -557,6 +628,77 @@
                     Pictures = new HashSet<Picture>(){
                         new Picture {Url = "https://cdn-ds.com/stock/2021-Land-Rover-Range-Rover-Velar-P400-R-Dynamic-HSE-Redwood-City-CA/seo/VAMP8332JLRLR-SALYM2FUXMA311778/sz_63734/e47908f306a093808546653a713dd201.jpg" },
                         new Picture {Url = "https://content.homenetiol.com/2000292/2106293/0x0/bb188e33f54c4480aa9bbd27fd9a29f3.jpg" },
+                    }
+                },
+                // 5 Pickup trucks
+                new Car
+                {
+                    Make = new() { Name = "Ford" },
+                    Model = new() { Name = "Raptor" },
+                    BodyTypeId = 8,
+                    Year = 2020,
+                    Price = 35500,
+                    AddedByUserId = AdminId,
+                    Description = "The 2020 Ford Raptor features a twin-turbocharged high-output 3.5L EcoBoost V6 engine that dishes out 450 horsepower and 510 lb-ft of torque. This Ford Raptor engine pairs to a paddle-shifted 10-speed automatic transmission to offer a smooth performance both on and off-road.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://automedia.investor.bg//media/files/resized/article/w1200x630/9af/c2006fcd5ae1470e889622456e5869af-01.jpg" },
+                        new Picture {Url = "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150/2021/collections/3-2/21_Ford_Raptor_Future_Vehicle_32.jpg/jcr:content/renditions/cq5dam.web.768.768.jpeg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Dodge" },
+                    Model = new() { Name = "Ram" },
+                    BodyTypeId = 8,
+                    Year = 2021,
+                    Price = 31200,
+                    AddedByUserId = AdminId,
+                    Description = "DESIGNED FOR SERIOUS PERFORMANCE. The 2021 Ram 1500 offers a range of workhorse engines from the standard 3.6L Pentastar® V6 gas engine with Class-Exclusive eTorque mild hybrid powertrain 4, to the two available HEMI® V8 engines and efficient 3.0L EcoDiesel V6 engine.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://thumbor.forbes.com/thumbor/fit-in/960x720/filters:format(jpg)/https://www.forbes.com/wheels/wp-content/uploads/2020/08/Ram-TRX-pickup-1500.png" },
+                        new Picture {Url = "https://cdn.jdpower.com/jdpa_2021%20ram%201500%20trx%20hellcat%20v8%20action.jpg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Mercedes-Benz" },
+                    Model = new() { Name = "X 250 d" },
+                    BodyTypeId = 8,
+                    Year = 2019,
+                    Price = 43000,
+                    AddedByUserId = AdminId,
+                    Description = "The Mercedes-Benz X-Class (W470) is a luxury pickup truck that was sold by the German automaker Mercedes-Benz, a division of German company Daimler AG.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://upload.wikimedia.org/wikipedia/commons/6/6a/2018_Mercedes-Benz_X_250_d_%28470%29_Power_utility_%282018-09-17%29.jpg" },
+                        new Picture {Url = "https://cdn.carbuzz.com/gallery-images/840x560/607000/400/607434.jpg" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "GMC" },
+                    Model = new() { Name = "Canyon" },
+                    BodyTypeId = 8,
+                    Year = 2021,
+                    Price = 32000,
+                    AddedByUserId = AdminId,
+                    Description = "The 2021 GMC Canyon is essentially the more glamorous version of the Chevy Colorado, even though they're largely identical underneath the surface. ... This allows it to best imitate full-size pickups—such as the GMC Sierra 1500—by way of its tremendous towing and hauling capabilities.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2021-gmc-canyon-at4-102-1578894115.jpg?crop=0.740xw:0.555xh;0.202xw,0.281xh&resize=1200:*" },
+                        new Picture {Url = "https://www.gmc.com/content/dam/gmc/na/us/english/index/gmc-life/all-stories/introducing-2021-canyon/gmc-life-canyon-reveal-mh-sm-21PGCN00061.jpg?imwidth=960" },
+                    }
+                },
+                new Car
+                {
+                    Make = new() { Name = "Ford" },
+                    Model = new() { Name = "Super Duty" },
+                    BodyTypeId = 8,
+                    Year = 2021,
+                    Price = 36600,
+                    AddedByUserId = AdminId,
+                    Description = "The Ford Super Duty (short for F-Series Super Duty) is a series of trucks manufactured by the Ford Motor Company.",
+                    Pictures = new HashSet<Picture>(){
+                        new Picture {Url = "https://www.automobilemag.com/uploads/sites/11/2019/10/2019-Ford-Super-Duty-SEMA-Rigs-5_SOCIAL.jpg?fit=around%7C875:492" },
+                        new Picture {Url = "https://images.hgmsites.net/hug/2020-ford-super-duty-f-250_100690438_h.jpg" },
                     }
                 }
                     );
