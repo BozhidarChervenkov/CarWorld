@@ -68,8 +68,15 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "D:\Web Projects\CarWorld\CarWorld\CarWorld\Areas\Administration\Views\_ViewImports.cshtml"
+using CarWorld.Areas.Administration.ViewModels.AdministrationMessages;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2971f985e63e442c8f6435c20ac8d6caab8f26e8", @"/Areas/Administration/Views/AdministrationRoles/ListRoles.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efa60a835215e6492d7f6185671f25ab4f618927", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a496ca497b02f93cb2ec41b618c292bc8004c343", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_AdministrationRoles_ListRoles : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarWorld.Areas.Administration.ViewModels.AdministrationRoles.AllRolesViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-success mb-3"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -132,7 +139,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"text-center\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e88495", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e88737", async() => {
                 WriteLiteral("\r\n            Create New Role\r\n        ");
             }
             );
@@ -180,7 +187,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("</h5>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e811398", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e811640", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -216,7 +223,7 @@ using CarWorld.ViewModels.CategoriesViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e814168", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e814410", async() => {
                 WriteLiteral("Delete");
             }
             );
@@ -271,7 +278,7 @@ else
                 Use the button bellow to create a role:
             </h5>
             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e817488", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2971f985e63e442c8f6435c20ac8d6caab8f26e817730", async() => {
                 WriteLiteral("\r\n                Create Role\r\n            ");
             }
             );

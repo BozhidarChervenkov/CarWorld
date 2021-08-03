@@ -1,0 +1,36 @@
+﻿@model UserMessagesViewModel
+
+@{
+    ViewData["Title"] = "User Messages";
+}
+
+<h1 class="text-center mb-4">@ViewData["Title"]:</h1>
+
+<hr>
+
+@if (Model.Messages.Any())
+{
+    <table class="table-bordered table-striped col-12">
+        <tr class="text-center">
+            <th>Username</th>
+            <th>Message</th>
+            <th>Sent at date</th>
+        </tr>
+        @foreach (var message in Model.Messages)
+        {
+            <tr class="text-center">
+                <td class="col-3">@message.UserName</td>
+                <td class="col-5">@message.MessageContent</td>
+                <td class="col-3">@message.SentAtDate 
+                <a asp-area="Administration" asp-controller="AdministrationMessages" asp-action="Delete" asp-route-id="@message.MessageId" class="btn btn-primary btn-sm ml-2">Delete message</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3 class="text-center text-danger mt-5 mb-5">No new messages yet!</h3>
+}
+
+<hr>
