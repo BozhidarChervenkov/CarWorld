@@ -1,21 +1,28 @@
 ﻿namespace CarWorld.Services.Car
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using CarWorld.GlobalConstants;
+    using System.Collections.Generic;
+    
     using CarWorld.ViewModels.CarViewModels;
+
+    using static GlobalConstants.GlobalConstants;
 
     public interface ICarsService
     {
         int DbCarsCount();
 
+        bool DoesCarExist(int id);
+
         public string BodyTypeName(int bodyTypeId);
 
         CarViewModel Car(int id);
 
-        Task<bool> DeleteCar(int id);
+        CarEditViewModel CarById(int id);
 
-        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = GlobalConstants.MaxCarsPerPageCount);
+        void Edit(CarEditViewModel input);
+
+        Task<bool> Delete(int id);
+
+        IEnumerable<CarInListViewModel> GetAll (int page, int itemsPerPage = MaxCarsPerPageCount);
     }
 }

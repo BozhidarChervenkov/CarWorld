@@ -6,6 +6,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using CarWorld.Data;
+    using CarWorld.Models;
     using CarWorld.ViewModels.CarViewModels;
 
     using static GlobalConstants.GlobalConstants;
@@ -22,6 +23,18 @@
         public int DbCarsCount()
         {
             return this.context.Cars.Count();
+        }
+
+        public bool DoesCarExist(int id)
+        {
+            var doesCarExist = this.context.Cars.Any(c => c.Id == id);
+
+            if (doesCarExist == true)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public string BodyTypeName(int bodyTypeId)
@@ -59,7 +72,48 @@
             return car;
         }
 
-        public async Task<bool> DeleteCar(int id)
+        public CarEditViewModel CarById(int id)
+        {
+            var car = this.context.Cars
+                .Where(c => c.Id == id && c.IsDeleted == false)
+                .Select(c => new CarEditViewModel
+                {
+                    CarId = c.Id,
+                    Make = c.Make,
+                    Model = c.Model,
+                    BodyTypeId = c.BodyTypeId,
+                    BodyType = c.BodyType,
+                    Price = c.Price,
+                    Year = c.Year,
+                    Description = c.Description,
+                    Pictures = c.Pictures
+                })
+                .FirstOrDefault();
+
+            return car;
+        }
+
+        public void Edit(CarEditViewModel input)
+        {
+            var carToEdit = this.context.Cars
+                .FirstOrDefault(c => c.Id == input.CarId && c.IsDeleted == false);
+
+            carToEdit.Make = new Make { CarId = input.CarId, Name = input.Make.Name };
+            carToEdit.Model = new Model { CarId = input.CarId, Name = input.Model.Name };
+            carToEdit.BodyTypeId = input.BodyTypeId;
+            carToEdit.Description = input.Description;
+            carToEdit.Year = input.Year;
+            carToEdit.Price = input.Price;
+
+            foreach (var picture in input.Pictures)
+            {
+                carToEdit.Pictures.Add(picture);
+            }
+
+            this.context.SaveChanges();
+        }
+
+        public async Task<bool> Delete(int id)
         {
             var car = this.context.Cars
                 .FirstOrDefault(c => c.Id == id);

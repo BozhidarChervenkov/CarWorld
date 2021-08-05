@@ -13,10 +13,12 @@
     public class CarsController : Controller
     {
         private readonly ICarsService carService;
+        private readonly ICreateCarService createCarService;
 
-        public CarsController(ICarsService carService)
+        public CarsController(ICarsService carService, ICreateCarService createCarService)
         {
             this.carService = carService;
+            this.createCarService = createCarService;
         }
 
         [HttpGet]
@@ -54,9 +56,38 @@
 
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> DeleteCar(int id)
+        public IActionResult Edit(int id)
         {
-            var isCarDeleted = this.carService.DeleteCar(id);
+            var doesCarExist = this.carService.DoesCarExist(id);
+
+            if (doesCarExist == false)
+            {
+                ViewBag.ErrorMessage = $"Car with id: {id} cannot be found!";
+
+                return this.View("NotFound");
+            }
+
+            var viewModel = this.carService.CarById(id);
+
+            ViewBag.BodyTypesSelectList = this.createCarService.BodyTypesSelectList();
+
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult Edit(CarEditViewModel input)
+        {
+            this.carService.Edit(input);
+
+            return RedirectToAction("CarById", new { id = input.CarId });
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var isCarDeleted = this.carService.Delete(id);
 
             if (await isCarDeleted == false)
             {

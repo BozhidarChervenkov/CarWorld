@@ -1,0 +1,74 @@
+﻿@model CarEditViewModel
+
+@{
+    ViewData["Title"] = "Edit car";
+}
+
+<div class="container">
+    <h3 class="display-4 text-center">@ViewData["Title"]:</h3>
+
+    <form asp-controller="Cars" asp-action="Edit" method="post" class="col-md-8 offset-2">
+
+        <input asp-for="CarId" type="hidden" value="@Model.CarId" />
+
+        <div class="form-group">
+            <label asp-for="Make" class="control-label"></label>
+            <input type="text" asp-for="Make.Name" class="form-control" placeholder="Make" />
+            <span asp-validation-for="Make.Name" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Model" class="control-label"></label>
+            <input type="text" asp-for="Model.Name" class="form-control" placeholder="Model" />
+            <span asp-validation-for="Model.Name" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BodyType" class="control-label"></label>
+            <select asp-for="BodyTypeId" class="form-control" asp-items="@ViewBag.BodyTypesSelectList">
+                <option value=" " selected disabled>--Select--</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Year"></label>
+            <input type="number" asp-for="Year" class="form-control" placeholder="Year" />
+            <span asp-validation-for="Year" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input type="text" asp-for="Price" class="form-control" placeholder="Price" />
+            <span asp-validation-for="Price" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger" />
+        </div>
+
+        <div class="m-3" id="CarPicturesContainer">
+            <label asp-for="Pictures"></label>
+            <a class="btn btn-success" onclick="AddMoreUrls()"><i class="fas fa-plus"></i></a>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" formmethod="post" class="btn-success btn-lg">Submit Changes</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        var urlIndex = 0;
+
+        function AddMoreUrls()
+        {
+            $("#CarPicturesContainer").append("<div class='mt-2'>Url:<input type='text' name='Pictures["+ urlIndex +"].Url' id='' /></div>");
+            urlIndex++;
+        }
+    </script>
+}
