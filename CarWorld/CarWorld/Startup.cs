@@ -17,6 +17,7 @@ namespace CarWorld
     using CarWorld.Services.Comment;
     using CarWorld.Services.SearchCars;
     using CarWorld.Services.CarShows;
+    using Microsoft.AspNetCore.Mvc;
 
     public class Startup
     {
@@ -50,7 +51,11 @@ namespace CarWorld
 
             services.AddControllersWithViews();
 
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+            // Putting the global Antiforgery token 
+            services.AddMvc(options => { 
+                options.EnableEndpointRouting = false;
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+            });
 
             services.AddTransient<ICreateCarService, CreateCarService>();
             services.AddTransient<ICarsService, CarsService>();

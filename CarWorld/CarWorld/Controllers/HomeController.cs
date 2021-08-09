@@ -2,20 +2,17 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Logging;
  
     using CarWorld.Models;
     using CarWorld.Services.Home;
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ILatestCarsService homeService;
         private readonly ICountsService countsService;
 
-        public HomeController(ILogger<HomeController> logger, ILatestCarsService homeService, ICountsService countsService)
+        public HomeController(ILatestCarsService homeService, ICountsService countsService)
         {
-            this._logger = logger;
             this.homeService = homeService;
             this.countsService = countsService;
         }

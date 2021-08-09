@@ -21,6 +21,7 @@
             this.createCarService = createCarService;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult CarById(int id)
         {

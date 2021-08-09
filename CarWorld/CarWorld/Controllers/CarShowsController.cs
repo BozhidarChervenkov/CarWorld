@@ -8,7 +8,6 @@
     using CarWorld.Models;
     using Microsoft.AspNetCore.Identity;
     using System.Threading.Tasks;
-    using System.Collections.Generic;
 
     public class CarShowsController : Controller
     {
