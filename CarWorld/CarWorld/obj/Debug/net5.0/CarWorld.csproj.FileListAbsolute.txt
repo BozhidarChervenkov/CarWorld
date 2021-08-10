@@ -1331,3 +1331,4 @@ D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.pdb
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.genruntimeconfig.cache
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Cars\Edit.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_PagingPartialCarCategories.cshtml.g.cs

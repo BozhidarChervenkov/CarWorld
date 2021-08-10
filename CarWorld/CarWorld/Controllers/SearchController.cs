@@ -28,8 +28,7 @@
         {
             if (string.IsNullOrWhiteSpace(input.SearchTerm))
             {
-                // Todo: Make error view more adequate!
-                return this.View("Error");
+                return this.RedirectToAction("SearchForCars");
             }
 
             if (this.searchService.DoesModelOrNameExist(input.SearchTerm) == false)

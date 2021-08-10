@@ -48,7 +48,6 @@
             return viewModel;
         }
 
-       
         public IEnumerable<CarInListViewModel> GetAll(int page, int bodyTypeId, int itemsPerPage = MaxCarsPerPageCount)
         {
             // Pagination Logic:

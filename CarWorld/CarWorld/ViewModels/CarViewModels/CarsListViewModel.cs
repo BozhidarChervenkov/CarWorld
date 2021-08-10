@@ -6,6 +6,6 @@
     {
         public IEnumerable<CarInListViewModel> Cars { get; set; }
 
-        public string BodyTypeName { get; set; }
+        public string BodyTypeName { get; set; } 
     }
 }
