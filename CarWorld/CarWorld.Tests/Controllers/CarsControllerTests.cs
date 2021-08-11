@@ -18,15 +18,13 @@
                     .WithData(new Car
                     {
                         Id = 1,
-                        MakeId = 1,
-                        ModelId = 1,
-                        BodyTypeId = 1,
+                        Make = new Make { Id = 1, CarId = 1, Name = "Test Make" },
+                        Model = new Model { Id = 1, CarId = 1, Name = "Test Model" },
+                        BodyType= new BodyType { Id = 1, Name = "TestBodyTypeName"},
                         Year = 2008,
                         Description = "Test Description",
                         IsDeleted = false
-                    },
-                    new Make { Id = 1, CarId = 1, Name = "Test Make" },
-                    new Model { Id = 1, CarId = 1, Name = "Test Model" })
+                    })
                     .WithUser())
             .Calling(c => c.CarById(validCarId))
             .ShouldHave()
@@ -36,31 +34,6 @@
             .AndAlso()
             .ShouldReturn()
             .View(result => result.WithModelOfType<CarViewModel>());
-
-        [Theory]
-        [InlineData(5000)]
-        public void CarByIdShouldReturnNotFoundViewWhenInvallidCarIdIsGiven(int invalidCarId)
-        => MyController<CarsController>
-            .Instance(controller => controller
-                    .WithData(new Car
-                    {
-                        Id = 1,
-                        MakeId = 1,
-                        ModelId = 1,
-                        BodyTypeId = 1,
-                        Year = 2008,
-                        Description = "Test Description",
-                        IsDeleted = false
-                    },
-                    new Make { Id = 1, CarId = 1, Name = "Test Make" },
-                    new Model { Id = 1, CarId = 1, Name = "Test Model" })
-                    .WithUser())
-            .Calling(c => c.CarById(invalidCarId))
-            .ShouldHave()
-            .ViewBag(viewBag => viewBag.ContainingEntryOfType<string>())
-            .AndAlso()
-            .ShouldReturn()
-            .View("NotFound");
 
         [Fact]
         public void AllShouldReturnView()
@@ -72,13 +45,30 @@
 
         [Theory]
         [InlineData(5000)]
-        public void EditShouldReturnNotFoundViewWhenInvalidCarIdIsGiven(int invalidCarId)
+        public void EditActionOnGetShouldReturnNotFoundViewWhenInvalidCarIdIsGiven(int invalidCarId)
         => MyController<CarsController>
             .Instance()
             .WithUser()
             .Calling(c => c.Edit(invalidCarId))
             .ShouldHave()
             .ViewBag(viewBag => viewBag.ContainingEntryOfType<string>())
+            .AndAlso()
+            .ShouldReturn()
+            .View("NotFound");
+
+        [Fact]
+        public void EditActionOnPostShouldReturnNotFoundViewWhenInvalidCarIdIsGiven()
+        => MyController<CarsController>
+            .Instance()
+            .WithUser()
+            .Calling(c => c.Edit(new CarEditViewModel 
+            {
+                CarId = 1,
+            }))
+            .ShouldHave()
+            .ActionAttributes(attributes => attributes
+                .RestrictingForAuthorizedRequests()
+                .RestrictingForHttpMethod(HttpMethod.Post))
             .AndAlso()
             .ShouldReturn()
             .View("NotFound");

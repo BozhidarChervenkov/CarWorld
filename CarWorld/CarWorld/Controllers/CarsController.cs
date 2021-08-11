@@ -79,6 +79,14 @@
         [HttpPost]
         public IActionResult Edit(CarEditViewModel input)
         {
+            var carExists = this.carService.DoesCarExist(input.CarId);
+
+            if (carExists == false)
+            {
+                ViewBag.ErrorMessage = $"Car with id {input.CarId} cannot be found!";
+                return this.View("NotFound");
+            }
+
             this.carService.Edit(input);
 
             return RedirectToAction("CarById", new { id = input.CarId });

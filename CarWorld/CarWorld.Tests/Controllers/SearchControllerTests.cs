@@ -4,6 +4,7 @@
     using MyTested.AspNetCore.Mvc;
 
     using CarWorld.Controllers;
+    using CarWorld.ViewModels.SearchCarViewModels;
 
     public class SearchControllerTests
     {
@@ -18,5 +19,17 @@
             .AndAlso()
             .ShouldReturn()
             .View();
+
+        [Fact]
+        public void SearchForCarsActionOnPostShouldRedirectWhenGivenDataIsNotValid()
+            => MyController<SearchController>
+            .Instance()
+            .Calling(c => c.SearchForCars( new SearchCarInputModel { SearchTerm =""}))
+            .ShouldHave()
+            .ActionAttributes(attributes => attributes
+                .RestrictingForHttpMethod(HttpMethod.Post))
+            .AndAlso()
+            .ShouldReturn()
+            .Redirect();
     }
 }
