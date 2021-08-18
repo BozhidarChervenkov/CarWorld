@@ -23,6 +23,7 @@
             return this.View(input);
         }
 
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public IActionResult SearchForCars(SearchCarInputModel input)
         {

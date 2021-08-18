@@ -28,6 +28,7 @@
             return this.View();
         }
 
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> CreateRole(CreateRoleInputModel input)
         {
@@ -110,6 +111,7 @@
             return this.View(model);
         }
 
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> EditRole(EditRoleViewModel input)
         {

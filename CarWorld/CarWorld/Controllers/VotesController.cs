@@ -21,7 +21,7 @@
             this.votesService = votesService;
             this.userManager = userManager;
         }
-
+        
         [Authorize]
         [HttpPost]
         public async Task<ActionResult<VoteResponseModel>> Post(VoteInputModel input)

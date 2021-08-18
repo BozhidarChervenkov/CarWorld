@@ -75,6 +75,7 @@
             return this.View(viewModel);
         }
 
+        [AutoValidateAntiforgeryToken]
         [Authorize]
         [HttpPost]
         public IActionResult Edit(CarEditViewModel input)

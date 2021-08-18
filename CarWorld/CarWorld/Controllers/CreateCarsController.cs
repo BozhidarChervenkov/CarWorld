@@ -28,6 +28,7 @@
             return this.View();
         }
 
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         [Authorize]
         public IActionResult Add(CreateCarInputModel inputModel)

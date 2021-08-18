@@ -15,6 +15,7 @@
             this.commentsService = commentsService;
         }
 
+        [AutoValidateAntiforgeryToken]
         [Authorize]
         [HttpPost]
         public IActionResult Comment(CarCommentViewModel input)

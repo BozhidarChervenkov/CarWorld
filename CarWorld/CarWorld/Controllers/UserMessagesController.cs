@@ -16,6 +16,7 @@
             this.userMessagesService = userMessagesService;
         }
 
+        [AutoValidateAntiforgeryToken]
         [Authorize]
         [HttpPost]
         public IActionResult SaveMessage(IndexViewModel input)

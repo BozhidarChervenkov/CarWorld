@@ -58,6 +58,7 @@
             return this.View();
         }
 
+        [AutoValidateAntiforgeryToken]
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Add(AddShowInputModel input)

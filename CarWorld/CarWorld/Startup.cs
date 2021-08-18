@@ -52,10 +52,10 @@ namespace CarWorld
             services.AddControllersWithViews();
 
             // Putting the global Antiforgery token 
-            services.AddMvc(options => { 
-                options.EnableEndpointRouting = false;
-                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
-            });
+            //services.AddMvc(options => { 
+            //    options.EnableEndpointRouting = false;
+            //    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+            //});
 
             services.AddTransient<ICreateCarService, CreateCarService>();
             services.AddTransient<ICarsService, CarsService>();
