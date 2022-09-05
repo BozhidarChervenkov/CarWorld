@@ -870,7 +870,6 @@ D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\CarWorld.runtimeconfig.json
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\CarWorld.runtimeconfig.dev.json
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\CarWorld.dll
-D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\ref\CarWorld.dll
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\CarWorld.pdb
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -1332,3 +1331,4 @@ D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\CarWorld.genruntimeconfig.cache
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Cars\Edit.cshtml.g.cs
 D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\Razor\Views\Shared\_PagingPartialCarCategories.cshtml.g.cs
+D:\Web Projects\CarWorld\CarWorld\.vs\CarWorld\CarWorld\CarWorld\obj\Debug\net5.0\refint\CarWorld.dll
