@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CarWorld")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3009052d6dae39de282bc35c1f3188d75febd872")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarWorld")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarWorld")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
